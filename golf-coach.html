@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コーチ・プロ紹介 - グリーンピア近江八幡ゴルフ練習場</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .coaches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .coach-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coach-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .coach-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .coach-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .coach-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 4px solid #667eea;
+        }
+        
+        .coach-info h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .coach-qualification {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .coach-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .schedule-section {
+            margin-bottom: 25px;
+        }
+        
+        .schedule-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .schedule-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .schedule-table tr:hover {
+            background: #f1f3f4;
+        }
+        
+        .price {
+            font-weight: 600;
+            color: #dc3545;
+        }
+        
+        .notes {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            color: #856404;
+        }
+        
+        .achievement {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            color: #2d3436;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { bottom: 10%; left: 20%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 1s; }
+        
+        @media (max-width: 768px) {
+            .coaches-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .coach-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .coach-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .schedule-table {
+                font-size: 0.9em;
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">⛳</div>
+        <div class="floating-element">🏌️</div>
+        <div class="floating-element">🏆</div>
+        <div class="floating-element">🎯</div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>コーチ・プロ紹介</h1>
+            <p>グリーンピア近江八幡ゴルフ練習場の経験豊富なプロフェッショナルコーチ陣</p>
+        </div>
+        
+        <div class="coaches-grid">
+            <!-- 吉井 泰恵プロ -->
+            <div class="coach-card">
+                <div class="coach-header">
+                    <img src="https://tipsandtips.xsrv.jp/Portfolio/wp-content/uploads/2023/05/staff_1.jpg" alt="吉井 泰恵プロ" class="coach-image">
+                    <div class="coach-info">
+                        <h3>吉井 泰恵プロ</h3>
+                        <div class="coach-qualification">日本女子プロゴルフ協会（LPGA）ティーチングプロA級</div>
+                    </div>
+                </div>
+                
+                <div class="schedule-section">
+                    <div class="schedule-title">金曜スクール（完全予約制）</div>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>一般（金曜日）</th>
+                                <th>ジュニア</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>月4回コース</strong><br>
+                                    <span class="price">8,500円（税込）</span><br>
+                                    4枚綴り（ボール代は含みません）<br>
+                                    友達・家族でシェアOK
+                                </td>
+                                <td>
+                                    <strong>小学1年生〜高校3年生</strong><br>
+                                    30分 <span class="price">1,000円</span><br>
+                                    （ボール代は含みません）
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ①13:00〜14:30<br>
+                                    ②15:00〜16:30<br>
+                                    ③18:30〜20:00
+                                </td>
+                                <td>
+                                    ①初心者コース 17:00〜（30分）<br>
+                                    ②経験者コース 17:30〜（30分）
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="notes">
+                        有効期間：3ヶ月
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 廣田 恭司プロ -->
+            <div class="coach-card">
+                <div class="coach-header">
+                    <img src="https://tipsandtips.xsrv.jp/Portfolio/wp-content/uploads/2023/05/staff_2.jpg" alt="廣田 恭司プロ" class="coach-image">
+                    <div class="coach-info">
+                        <h3>廣田 恭司プロ</h3>
+                        <div class="coach-qualification">日本プロゴルフ協会（PGA）トーナメントプレーヤー</div>
+                    </div>
+                </div>
+                
+                <div class="schedule-section">
+                    <div class="schedule-title">土曜・日曜スクール</div>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>レッスン内容</th>
+                                <th>料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>土曜 or 日曜マンツーマンレッスン</strong><br>
+                                    時間：10:00〜15:00<br>
+                                    2時間の打ち放題の内、25分間のマンツーマンレッスン
+                                </td>
+                                <td>
+                                    男性：<span class="price">3,600円</span><br>
+                                    女性：<span class="price">3,100円</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="notes">
+                        <strong>5月</strong> 17日，31日（土）<br>
+                        <strong>6月</strong> 14日，28日（土）<br>
+                        ※プロの試合の都合で変更になる場合があります。
+                    </div>
+                    <div class="achievement">
+                        🏆 日本オープンゴルフ選手権競技2018に出場！！
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 信田 博良プロ -->
+            <div class="coach-card">
+                <div class="coach-header">
+                    <img src="https://tipsandtips.xsrv.jp/Portfolio/wp-content/uploads/2023/05/coach.png" alt="信田 博良プロ" class="coach-image">
+                    <div class="coach-info">
+                        <h3>信田 博良プロ</h3>
+                        <div class="coach-qualification">USGTF（レベルⅢ）ティーチングプロ</div>
+                    </div>
+                </div>
+                
+                <div class="schedule-section">
+                    <div class="schedule-title">月・木・土・日スクール</div>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>スクール</th>
+                                <th>個人レッスン</th>
+                                <th>初心者スクール</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    ①10:30〜12:00<br>
+                                    ②14:00〜15:30<br>
+                                    ③16:00〜17:30（土日のみ）
+                                </td>
+                                <td>
+                                    ①16:00〜18:00（月木のみ）<br>
+                                    ②18:00〜19:00（土日のみ）
+                                </td>
+                                <td>
+                                    12:30〜13:30<br>
+                                    （4名までOK）<br>
+                                    月・土・日（土曜は1・3・5週）
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>料金（有効期限1ヶ月）</strong><br>
+                                    1回：<span class="price">4,500円</span><br>
+                                    2回：<span class="price">8,500円</span><br>
+                                    3回：<span class="price">12,000円</span><br>
+                                    4回：<span class="price">15,000円</span><br>
+                                    ※ボール代を含む
+                                </td>
+                                <td>
+                                    <strong>料金（1回）</strong><br>
+                                    20分：<span class="price">2,000円</span><br>
+                                    30分：<span class="price">3,000円</span><br>
+                                    40分：<span class="price">4,000円</span><br>
+                                    60分：<span class="price">5,000円</span><br>
+                                    ※ボール代を含まない
+                                </td>
+                                <td>
+                                    <span class="price">無料</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="notes">
+                        日曜日・祝日は、4名様限定となりますので事前のご予約が必要となります<br>
+                        <strong>5月のレッスン日</strong> 17日・31日（土）<br>
+                        <strong>6月のお休み</strong> 1日（日）、14日（土）、23日（月）、26日（水）
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 藤田 翼プロ -->
+            <div class="coach-card">
+                <div class="coach-header">
+                    <img src="https://tipsandtips.xsrv.jp/Portfolio/wp-content/uploads/2023/05/fujita-pro-1.jpg" alt="藤田 翼プロ" class="coach-image">
+                    <div class="coach-info">
+                        <h3>藤田 翼プロ</h3>
+                        <div class="coach-qualification">日本プロゴルフ協会（PGA）トーナメントプレーヤー<br>JGTO ツアープレーヤー</div>
+                    </div>
+                </div>
+                
+                <div class="schedule-section">
+                    <div class="schedule-title">火曜日スクール</div>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>時間</th>
+                                <th>料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>19:00〜20:00</td>
+                                <td>1回 <span class="price">3,000円</span><br>（ボール代は含みません）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="notes">
+                        <strong>4月のレッスン日</strong> 22日（火）<br>
+                        事前予約となります。レッスンは毎週火曜ですが、プロの試合の都合でお休みになる場合もありますのでご了承ください。
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 金子 徳馬プロ -->
+            <div class="coach-card">
+                <div class="coach-header">
+                    <img src="https://tipsandtips.xsrv.jp/greenpiagolf/wp-content/uploads/2025/03/kaneko-coach.png" alt="金子 徳馬プロ" class="coach-image">
+                    <div class="coach-info">
+                        <h3>金子 徳馬プロ</h3>
+                        <div class="coach-qualification">日本プロゴルフ協会（PGA）トーナメントプレーヤー</div>
+                    </div>
+                </div>
+                
+                <div class="coach-description">
+                    土曜日打球練習・アプローチ・バンカーのレッスンもおこないます！
+                </div>
+                
+                <div class="schedule-section">
+                    <div class="schedule-title">土曜スクール（常時開催）</div>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>スクール時間</th>
+                                <th>人数</th>
+                                <th>料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>17:30〜18:30</td>
+                                <td>4名</td>
+                                <td>1回 <span class="price">3,000円</span><br>（ボール代は含みません）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="notes">
+                        フロントまでお申し込みください。
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 中西 永知プロ -->
+            <div class="coach-card">
+                <div class="coach-header">
+                    <img src="https://tipsandtips.xsrv.jp/greenpiagolf/wp-content/uploads/2025/03/nakanishi-pro-1-768x768-1.png" alt="中西 永知プロ" class="coach-image">
+                    <div class="coach-info">
+                        <h3>中西 永知プロ</h3>
+                        <div class="coach-qualification">日本プロゴルフ協会（PGA）ティーチングプロ</div>
+                    </div>
+                </div>
+                
+                <div class="coach-description">
+                    10歳からゴルフを始め、中学・高校・大学では競技ゴルフを通じて、蝉川プロ、平田プロ、中島プロたちと凌ぎを削る
+                </div>
+                
+                <div class="schedule-section">
+                    <div class="schedule-title">月・土・日レッスン</div>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>レッスン名</th>
+                                <th>時間</th>
+                                <th>料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ワンポイントレッスン</td>
+                                <td>10分</td>
+                                <td><span class="price">1,200円</span></td>
+                            </tr>
+                            <tr>
+                                <td>トラックマン4（データ）</td>
+                                <td>20分</td>
+                                <td><span class="price">2,400円〜</span></td>
+                            </tr>
+                            <tr>
+                                <td>マンツーマンレッスン</td>
+                                <td>60分</td>
+                                <td><span class="price">5,000円〜</span></td>
+                            </tr>
+                            <tr>
+                                <td>ペアレッスン（2名）</td>
+                                <td>60分</td>
+                                <td><span class="price">7,000円〜</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // カードのホバーエフェクト
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.coach-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // スクロールアニメーション
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

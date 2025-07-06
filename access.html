@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アクセス - グリーンピア近江八幡ゴルフ練習場</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4f4d4 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #2d5a2d;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2d5a2d, #4a8c4a);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(45, 90, 45, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .access-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #4a8c4a;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #f0f8f0, #e8f5e8);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #4a8c4a;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 140, 74, 0.2);
+        }
+        
+        .contact-card h3 {
+            color: #2d5a2d;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-card h3::before {
+            content: "📍";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card p {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #3d6a3d;
+        }
+        
+        .access-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .access-method {
+            background: linear-gradient(135deg, #f8fdf8, #f0f8f0);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #d4f4d4;
+            transition: all 0.3s ease;
+        }
+        
+        .access-method:hover {
+            border-color: #4a8c4a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 140, 74, 0.15);
+        }
+        
+        .access-method h3 {
+            color: #2d5a2d;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .train-icon::before {
+            content: "🚆";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .car-icon::before {
+            content: "🚗";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .access-method p {
+            font-size: 1.1rem;
+            color: #3d6a3d;
+            margin-bottom: 10px;
+        }
+        
+        .parking-info {
+            background: linear-gradient(135deg, #4a8c4a, #2d5a2d);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(45, 90, 45, 0.3);
+        }
+        
+        .parking-info::before {
+            content: "🅿️";
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(rgba(45, 90, 45, 0.7), rgba(74, 140, 74, 0.7)), url('https://tipsandtips.xsrv.jp/greenpiagolf/wp-content/uploads/2023/05/bg_3.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2d5a2d, #4a8c4a);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .access-section {
+                padding: 25px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .access-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header animate-fade-in">
+            <h1>グリーンピア近江八幡ゴルフ練習場</h1>
+            <p>アクセス情報</p>
+        </header>
+        
+        <div class="hero-image animate-fade-in">
+            <div class="hero-content">
+                <h2>自然に囲まれたゴルフ練習場</h2>
+                <p>滋賀県近江八幡市でお待ちしています</p>
+            </div>
+        </div>
+        
+        <section class="access-section animate-fade-in">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>所在地</h3>
+                    <p>滋賀県近江八幡市倉橋部町 146-5</p>
+                </div>
+                <div class="contact-card">
+                    <h3>お問い合わせ</h3>
+                    <p>TEL: 0748-37-2010</p>
+                    <p>FAX: 0748-37-8115</p>
+                </div>
+            </div>
+            
+            <div class="access-methods">
+                <div class="access-method">
+                    <h3 class="train-icon">電車でお越しの場合</h3>
+                    <p>琵琶湖線 JR近江八幡駅からバス及び車で15分</p>
+                </div>
+                <div class="access-method">
+                    <h3 class="car-icon">自動車でお越しの場合</h3>
+                    <p>名神竜王インターチェンジから車で12分</p>
+                    <p>蒲生インターチェンジから車で7分</p>
+                </div>
+            </div>
+            
+            <div class="parking-info">
+                <strong>駐車場100台完備</strong>
+            </div>
+        </section>
+        
+        <footer class="footer animate-fade-in">
+            <p>&copy; 2024 グリーンピア近江八幡ゴルフ練習場. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // アニメーション効果の追加
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s ease-in-out';
+                    }
+                });
+            });
+            
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

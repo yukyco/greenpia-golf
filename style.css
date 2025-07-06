@@ -1,0 +1,457 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rounded Mplus 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            background-color: #006634;
+            color: white; /* 必要なら文字色も調整 */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+        /* Header */
+        /* 全体のヘッダー背景色と中央寄せ */
+        .header {
+            background-color: #006634;
+            color: #fff;
+            padding: 20px 0;
+            justify-content: center; /* 👈 全体を中央に */
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* ロゴ画像の中央表示 */
+        .logo-wrapper {
+            margin-bottom: 1em;
+           }
+        .logo-img {
+            height: 120px;
+            width: auto;
+            display: inline-block;
+            justify-content: center;
+           }
+
+
+      .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+
+
+            @media screen and (max-width: 768px) {
+            .logo-img {
+                height: 45px; /* スマホ時は少し小さく */
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+            .logo-img {
+                height: 60px;
+            }
+            .nav-list {
+                flex-direction: column;
+                gap: 1em;
+               }
+            }
+
+        /* メニューリストの中央揃え */
+                .nav-list {
+                list-style: none;
+                padding: 0;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5em;
+                }
+                .nav-list li a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1rem;
+                padding: 0.5em 0.8em;
+                }
+
+                /* お問い合せだけボタン風に */
+                .contact-btn {
+                background-color: orange;
+                color: white !important;
+                border-radius: 4px;
+                padding: 0.5em 1em;
+                }
+
+
+
+            /* ハンバーガー */
+            .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            }
+            .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            }
+
+            /* モバイル用 */
+            @media screen and (max-width: 768px) {
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                background: #004d00;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 1em;
+            }
+            .nav-list.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            }
+
+
+        /* スライドショー */
+  
+        .slider {
+            position: relative;
+            width: 100vw; /* ← 幅を100%の画面サイズに */
+            height: 80vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius:10px; /* 角丸 */
+            overflow: hidden;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            }
+            .slide.active {
+            opacity: 1;
+            }
+
+
+        /* Main Content */
+        main {
+            padding: 0 0;
+        }
+        
+        .section {
+            background: #006634;
+            color: #fff;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #006634;
+            padding-bottom: 10px;
+        }
+        
+        /* Operating Hours */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .hours-table th,
+        .hours-table td {
+            border: 1px solid #fff;;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .hours-table th {
+            background-color: #006634;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .hours-table tr:nth-child(even) {
+            background-color: #006634;
+        }
+        
+        /* Events */
+        .events-section {
+            background: linear-gradient(135deg, #12A75E, #f0f8f0);
+        }
+        
+        .event-item {
+            background: white;
+            color: #2d5a3d;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #006634;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .event-title {
+            font-weight: bold;
+            color: #2d5a3d;
+            margin-bottom: 5px;
+        }
+        
+       /* Coach Section */ 
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+
+        @media (max-width: 768px) {
+            .coach-grid {
+                grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
+               }
+            }
+        .coach-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            }
+
+        .coach-card {
+        /* background: #3B9873; */
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .coach-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .coach-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid #006634;
+        }
+        
+        .coach-name {
+            font-size: 1.0em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        
+        /* SNS Section */
+        .sns-section {
+            text-align: center;
+            padding: 2em 1em;
+            color: white;
+        }
+
+        .sns-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2em;
+            margin-top: 1em;
+        }
+
+        .sns-box {
+        width: 300px; /* 各SNSの幅を統一 */
+        max-width: 90vw;
+        }
+
+        .sns-img {
+        width: 100%;
+        border-radius: 10px;
+        }
+
+
+          /* JOB Section */
+        .job-section {
+            background: linear-gradient(135deg, #f59e0b, #d97706);background: 
+            linear-gradient(135deg, #f59e0b, #d97706);
+            text-align: center;
+            padding: 2em 1em;
+            color: white;
+        }
+
+        .job-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2em;
+            margin-top: 1em;
+        }
+
+        .job-box {
+            width: 300px; /* 各SNSの幅を統一 */
+            max-width: 90vw;
+        }
+
+        .job-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Job Recruitment 
+        .job-section {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            text-align: center;
+        }
+        
+        .job-section h2 {
+            color: white!important;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }*/
+        
+        /* Footer */
+        footer {
+            background: #006634;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .facility-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .contact-info {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .contact-info strong {
+            color: #a7d4a7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .coach-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hours-table {
+                font-size: 0.9em;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Highlight colors */
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fbbf24);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #92400e;
+        }
+
+        /* 追加で全体を中央寄せ */
+        body {
+        text-align: center;
+        }
+        .slider {
+        text-align: left; /* ← これを追加して中央寄せの影響を防ぐ */
+        margin: 1em auto;
+        }
+
+        /* テーブル内の文字中央揃え */
+        .hours-table th,
+        .hours-table td {
+        text-align: center !important;
+        }
+
+        /* レッスン・イベント情報の中央揃え */
+        .event-item {
+        text-align: center;
+        }
+
+        /* フッター内のテキスト中央揃え */
+        .contact-info {
+        text-align: center;
+        }
+
+        .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        }
+
+ /* 幅を狭くするクラス */
+        .section.narrow {
+            max-width: 800px!important;
+            margin: 0 auto;
+        }

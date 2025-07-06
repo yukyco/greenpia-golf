@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンバー料金 - グリーンピア近江八幡ゴルフ練習場</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d5016;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: #b8e6c1;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .announcement {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border: 2px solid #7fbc8c;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(127, 188, 140, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement::before {
+            content: '🎉';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .announcement h2 {
+            color: #2d5016;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #7fbc8c;
+            padding-bottom: 0.5rem;
+        }
+
+        .card-info {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            border-left: 5px solid #28a745;
+        }
+
+        /* Benefits section */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(127, 188, 140, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(127, 188, 140, 0.25);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #28a745, #7fbc8c);
+        }
+
+        .benefit-title {
+            color: #2d5016;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #28a745, #7fbc8c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: linear-gradient(135deg, #28a745 0%, #7fbc8c 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        th:first-child {
+            border-top-left-radius: 15px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 15px;
+        }
+
+        tr:hover {
+            background: rgba(127, 188, 140, 0.1);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            font-weight: 600;
+            color: #155724;
+        }
+
+        /* Membership types */
+        .membership-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .membership-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(127, 188, 140, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(127, 188, 140, 0.25);
+        }
+
+        .membership-card.premium {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            border: 3px solid #f1c40f;
+        }
+
+        .membership-card.gold {
+            background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+            border: 3px solid #e67e22;
+        }
+
+        .membership-card.standard {
+            background: linear-gradient(135deg, #7fbc8c 0%, #a8d5ba 100%);
+            border: 3px solid #28a745;
+        }
+
+        .membership-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2d5016;
+        }
+
+        .membership-price {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #c0392b;
+            margin-bottom: 1.5rem;
+        }
+
+        .membership-features {
+            list-style: none;
+        }
+
+        .membership-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .membership-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .unavailable {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px dashed #6c757d;
+            color: #6c757d;
+        }
+
+        .unavailable .membership-title {
+            color: #6c757d;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .membership-types {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>メンバー料金</h1>
+            <p class="subtitle">グリーンピア近江八幡ゴルフ練習場</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="announcement animate-slide-in">
+                <h2>🎉 会員証が新しくなりました！</h2>
+                <p>プリペイドカードご購入ごとにポイントをプレゼントします。<br>
+                以前よりももっとお得な特典が付いています♪</p>
+                
+                <div class="card-info">
+                    <h3>新会員証兼ポイントカードについて</h3>
+                    <ul>
+                        <li>新会員証の期限は有効日（加入期間1年間）まで</li>
+                        <li>来店時に必ず会員証兼ポイントカードをご提示ください</li>
+                        <li>カード購入時に会員証を持参されていない場合、後日ポイントプレゼントができません</li>
+                        <li>カードの紛失の場合は再発行に手数料がかかります</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="benefits">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-title">
+                        <div class="benefit-icon">①</div>
+                        プリペイドカード購入ポイント
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>購入金額</th>
+                                    <th>10,000円</th>
+                                    <th>5,000円</th>
+                                    <th>3,000円</th>
+                                    <th>2,000円</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="highlight">一球打ち</td>
+                                    <td>1,000ポイント</td>
+                                    <td>500ポイント</td>
+                                    <td>300ポイント</td>
+                                    <td>200ポイント</td>
+                                </tr>
+                                <tr>
+                                    <td class="highlight">打ち放題</td>
+                                    <td>500ポイント</td>
+                                    <td>250ポイント</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-title">
+                        <div class="benefit-icon">②</div>
+                        プリペイドカード プレミア特典
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>購入金額</th>
+                                    <th>10,000円</th>
+                                    <th>5,000円</th>
+                                    <th>3,000円</th>
+                                    <th>2,000円</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="highlight">プレミア付き</td>
+                                    <td>1,000円分付き</td>
+                                    <td>300円分付き</td>
+                                    <td>100円分付き</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-title">
+                        <div class="benefit-icon">③</div>
+                        会員継続特典
+                    </div>
+                    <p>有効日を過ぎ1週間以内に継続をして頂くとポイントプレゼント！</p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>会員種類</th>
+                                    <th>プレミアム会員</th>
+                                    <th>ゴールド会員</th>
+                                    <th>準会員</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="highlight">継続ポイント</td>
+                                    <td>1,000ポイント</td>
+                                    <td>300ポイント</td>
+                                    <td>100ポイント</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-radius: 15px;">
+                <h3 style="color: #2d5016; font-size: 1.5rem; margin-bottom: 0.5rem;">メンバー加入される方がかなりお得です！</h3>
+                <p style="color: #155724; font-size: 1.1rem;">ぜひ、ポイントを貯めて、プリカをゲットしてください(^^♪</p>
+            </div>
+
+            <h2 style="text-align: center; color: #2d5016; font-size: 2rem; margin: 3rem 0 2rem 0;">会員（メンバー）種別について</h2>
+
+            <div class="membership-types">
+                <div class="membership-card standard fade-in">
+                    <h3 class="membership-title">準会員</h3>
+                    <div class="membership-price">¥2,000 <span style="font-size: 1rem; font-weight: normal;">年会費</span></div>
+                    <ul class="membership-features">
+                        <li>入場料無料</li>
+                        <li>アプローチ練習場無料</li>
+                    </ul>
+                </div>
+
+                <div class="membership-card gold fade-in">
+                    <h3 class="membership-title">ゴールド会員</h3>
+                    <div class="membership-price">¥5,000 <span style="font-size: 1rem; font-weight: normal;">年会費</span></div>
+                    <ul class="membership-features">
+                        <li>入場料無料</li>
+                        <li>1球単価割引（平日2円引、土日祝1円引）</li>
+                        <li>アプローチ練習場無料</li>
+                        <li>バンカー練習場無料</li>
+                        <li>打ち放題 2時間以内 ¥1,100</li>
+                        <li>打ち放題 3時間以内 ¥1,650</li>
+                    </ul>
+                </div>
+
+                <div class="membership-card premium unavailable fade-in">
+                    <h3 class="membership-title">プレミアム会員</h3>
+                    <div class="membership-price">募集停止中</div>
+                    <p style="text-align: center; color: #6c757d; font-style: italic;">
+                        現在、プレミアム会員の募集はしておりません。<br>
+                        継続のお客様のみとなります。
+                    </p>
+                    <ul class="membership-features">
+                        <li>入場料無料</li>
+                        <li>1球単価割引（平日2円引、土日祝1円引）</li>
+                        <li>アプローチ練習場無料</li>
+                        <li>バンカー練習場無料</li>
+                        <li>毎月のプレミアム週間とお誕生日月はお得！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 グリーンピア近江八幡ゴルフ練習場. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.membership-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05) rotateY(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1) rotateY(0deg)';
+            });
+        });
+
+        // Add click animation to benefit cards
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
