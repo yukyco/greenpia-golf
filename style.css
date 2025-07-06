@@ -67,7 +67,7 @@
             }
 
         /* メニューリストの中央揃え */
-                .nav-list {
+            .nav-list {
                 list-style: none;
                 padding: 0;
                 margin: 0 auto;
@@ -76,7 +76,7 @@
                 justify-content: center;
                 gap: 1.5em;
                 }
-                .nav-list li a {
+             .nav-list li a {
                 color: white;
                 text-decoration: none;
                 font-weight: bold;
@@ -84,29 +84,15 @@
                 padding: 0.5em 0.8em;
                 }
 
-                /* お問い合せだけボタン風に */
-                .contact-btn {
+         /* お問い合せだけボタン風に */
+            .contact-btn {
                 background-color: orange;
                 color: white !important;
                 border-radius: 4px;
                 padding: 0.5em 1em;
                 }
 
-
-
-            /* ハンバーガー */
-            .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-            }
-            .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            border-radius: 2px;
-            }
+            
 
             /* モバイル用 */
             @media screen and (max-width: 768px) {
@@ -474,3 +460,162 @@
             max-width: 800px!important;
             margin: 0 auto;
         }
+
+
+/* レスポンシブ　メニューバー　*/
+ .menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  color: white;
+}
+
+.mobile-menu {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #006634;
+  color: white;
+  padding: 60px 20px;
+  transition: right 0.3s ease;
+  z-index: 1002;
+  border-radius: 2px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+}
+
+/* メニューが表示されてるときのクラス */
+.menu-open #mobileMenu {
+  right: 0;
+}
+
+.menu-open #overlay {
+  display: block;
+}
+
+
+@media screen and (min-width: 768px) {
+  .menu-toggle,
+  .mobile-menu,
+  .overlay {
+    display: none;
+  }
+}
+
+/* スマホ用メニュー */
+/* ハンバーガーアイコン */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  display: none; /* スマホ時のみ表示 */
+}
+
+.hamburger-menu img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* サイドメニュー */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background-color: #006634;
+  transition: right 0.3s ease-in-out;
+  z-index: 1002;
+  padding: 60px 20px 20px;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+/* ✖ボタンの位置固定 */
+.side-menu img#closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* メニューリスト */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 80px;
+}
+
+.side-menu li {
+  margin: 20px 0;
+}
+
+.side-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* オーバーレイ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+}
+
+/* 開いたとき */
+.menu-open #sideMenu {
+  right: 0;
+}
+.menu-open #overlay {
+  display: block;
+}
+
+/* スマホのみ表示 */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+  .desktop-nav {
+    display: none;
+  }
+}
