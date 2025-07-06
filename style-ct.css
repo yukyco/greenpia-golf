@@ -19,7 +19,6 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
             color: white;
             padding: 2rem 0;
             text-align: center;
@@ -146,6 +145,7 @@
             margin-bottom: 1rem;
             padding: 0.8rem;
             background: #f8fff8;
+            color: #2c5530;
             border-left: 4px solid #4a7c59;
             border-radius: 5px;
         }

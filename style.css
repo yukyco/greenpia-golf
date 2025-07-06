@@ -86,10 +86,11 @@
 
          /* お問い合せだけボタン風に */
             .contact-btn {
-                background-color: orange;
-                color: white !important;
-                border-radius: 4px;
-                padding: 0.5em 1em;
+                background: linear-gradient(135deg, #FF8630, #fbbf24);
+                padding: 2px 8px;
+                border-radius: 5px;
+                font-weight: bold;
+                color: #92400e;
                 }
 
             
@@ -193,8 +194,8 @@
         }
         
         .event-item {
-            background: white;
-            color: #2d5a3d;
+            background: #5AA86B;
+            color: #fff;
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 10px;
@@ -204,9 +205,10 @@
         
         .event-title {
             font-weight: bold;
-            color: #2d5a3d;
+            color: #fff;
             margin-bottom: 5px;
         }
+        
         
        /* Coach Section */ 
         .coach-grid {
@@ -292,8 +294,7 @@
 
           /* JOB Section */
         .job-section {
-            background: linear-gradient(135deg, #f59e0b, #d97706);background: 
-            linear-gradient(135deg, #f59e0b, #d97706);
+            background: #5AA86B;
             text-align: center;
             padding: 2em 1em;
             color: white;
@@ -314,8 +315,8 @@
 
         .job-img {
             width: 100%;
-            border-radius: 10px;
         }
+
 
         
         /* Footer */
@@ -349,32 +350,7 @@
             text-decoration: underline;
             }
 
-         /* footer {
-            background: #006634;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
         
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        } 
-        
-        .facility-image {
-            width: 100%;
-            max-width: 600px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-        
-        .contact-info {
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
         
         .contact-info strong {
             color: #a7d4a7;

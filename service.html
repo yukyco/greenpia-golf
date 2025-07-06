@@ -12,18 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
 </head>
 
-  <header class="header">
-   <div class="logo-wrapper">
-    <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
-</div>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>営業案内・料金表</h1>
-            <p class="subtitle">グリーンピア近江八幡ゴルフ練習場</p>
-        </div>
-    </header>
-  <!-- ハンバーガーメニュー -->
+   
+<header class="header">
+  <div class="logo-wrapper">
+    <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
+  </div>
+
+    <!-- ハンバーガーメニュー -->
     <div class="hamburger-menu">
       <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
     </div>
@@ -51,7 +48,7 @@
         <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
         <li><a href="member.html">メンバー制度</a></li>
         <li><a href="faq.html">よくあるご質問</a></li>
-        <li><a href="contact.html">お問合せ</a></li>
+        <li class="contact-btn"><a href="contact.html">お問合せ</a></li>
       </ul>
      </nav>
   </header>
@@ -194,13 +191,20 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 グリーンピア近江八幡ゴルフ練習場. All rights reserved.</p>
+   <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+            <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+            <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="lesson.html">レッスン日程</a>
+            <a href="holidays.html">お休みカレンダー</a>
+            <a href="contact.html">お問い合わせ</a>
+            </div>
         </div>
-    </footer>
-
-    <script>
+   </footer>
+       
+   <script>
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -263,6 +267,20 @@
                 price.style.animation = '';
             });
         });
+    </script>
+    
+        <script src="script.js"></script>
+     
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.right = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.getElementById('sideMenu').style.right = '-100%';
+            document.getElementById('overlay').style.display = 'none';
+        }
     </script>
 </body>
 </html>

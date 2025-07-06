@@ -20,7 +20,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            background: #006634;
             padding: 3rem 0;
             position: relative;
             overflow: hidden;
@@ -415,7 +415,6 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
             color: white;
             text-align: center;
             padding: 2rem 0;
