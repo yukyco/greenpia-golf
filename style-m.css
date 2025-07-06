@@ -1,0 +1,353 @@
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d5016;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: #b8e6c1;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .announcement {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border: 2px solid #7fbc8c;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(127, 188, 140, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement::before {
+            content: '🎉';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .announcement h2 {
+            color: #2d5016;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #7fbc8c;
+            padding-bottom: 0.5rem;
+        }
+
+        .card-info {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            border-left: 5px solid #28a745;
+        }
+
+        /* Benefits section */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(127, 188, 140, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(127, 188, 140, 0.25);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #28a745, #7fbc8c);
+        }
+
+        .benefit-title {
+            color: #2d5016;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #28a745, #7fbc8c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: linear-gradient(135deg, #28a745 0%, #7fbc8c 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        th:first-child {
+            border-top-left-radius: 15px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 15px;
+        }
+
+        tr:hover {
+            background: rgba(127, 188, 140, 0.1);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            font-weight: 600;
+            color: #155724;
+        }
+
+        /* Membership types */
+        .membership-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .membership-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(127, 188, 140, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(127, 188, 140, 0.25);
+        }
+
+        .membership-card.premium {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            border: 3px solid #f1c40f;
+        }
+
+        .membership-card.gold {
+            background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+            border: 3px solid #e67e22;
+        }
+
+        .membership-card.standard {
+            background: linear-gradient(135deg, #7fbc8c 0%, #a8d5ba 100%);
+            border: 3px solid #28a745;
+        }
+
+        .membership-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2d5016;
+        }
+
+        .membership-price {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #c0392b;
+            margin-bottom: 1.5rem;
+        }
+
+        .membership-features {
+            list-style: none;
+        }
+
+        .membership-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .membership-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .unavailable {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px dashed #6c757d;
+            color: #6c757d;
+        }
+
+        .unavailable .membership-title {
+            color: #6c757d;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .membership-types {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }

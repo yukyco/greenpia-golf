@@ -231,6 +231,7 @@
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             }
 
         .coach-card {
@@ -618,4 +619,31 @@
   .desktop-nav {
     display: none;
   }
+}
+
+
+/* top コーチ紹介リンク */
+.coach-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center!important; /* 中央揃え */
+  margin-top: 15px;
+}
+
+.coach-button {
+  background: #fff;
+  color: #006634;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 40px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coach-button:hover {
+  background: #006634;
+  color: #fff;
+  border: 1px solid #fff;
 }

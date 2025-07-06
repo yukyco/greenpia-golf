@@ -3,328 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>施設案内 - グリーンピア近江八幡ゴルフ練習場</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #2d5a3d, #4a7c59);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
-        
-        .logo {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        /* Navigation */
-        nav {
-            background: rgba(45, 90, 61, 0.9);
-            padding: 15px 0;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            display: inline-block;
-        }
-        
-        nav a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-        
-        /* Main Content */
-        main {
-            padding: 40px 0;
-        }
-        
-        .hero-section {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, rgba(45, 90, 61, 0.1), rgba(74, 124, 89, 0.1));
-            border-radius: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .hero-title {
-            font-size: 3em;
-            color: #2d5a3d;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3em;
-            color: #4a7c59;
-            margin-bottom: 30px;
-        }
-        
-        .catchphrase {
-            font-size: 1.5em;
-            color: #d97706;
-            font-weight: bold;
-            background: linear-gradient(135deg, #fef3c7, #fbbf24);
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            box-shadow: 0 5px 20px rgba(249, 115, 22, 0.3);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        /* Facility Grid */
-        .facilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .facility-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .facility-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(135deg, #4a7c59, #2d5a3d);
-        }
-        
-        .facility-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border-color: #4a7c59;
-        }
-        
-        .facility-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
-            text-align: center;
-        }
-        
-        .facility-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #2d5a3d;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .facility-description {
-            color: #666;
-            line-height: 1.7;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .facility-features {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .facility-features li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .facility-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #4a7c59;
-            font-weight: bold;
-        }
-        
-        /* Special cards */
-        .driving-range {
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border-color: #22c55e;
-        }
-        
-        .putting-practice {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border-color: #3b82f6;
-        }
-        
-        .bunker-practice {
-            background: linear-gradient(135deg, #fefce8, #fef3c7);
-            border-color: #f59e0b;
-        }
-        
-        .amenities {
-            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
-            border-color: #ec4899;
-        }
-        
-        /* Statistics section */
-        .stats-section {
-            background: linear-gradient(135deg, #2d5a3d, #4a7c59);
-            color: white;
-            padding: 50px 0;
-            border-radius: 20px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3em;
-            font-weight: bold;
-            color: #a7d4a7;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
-        
-        /* Footer */
-        footer {
-            background: #2d5a3d;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-        
-        .contact-info {
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-        
-        .contact-info strong {
-            color: #a7d4a7;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .logo {
-                font-size: 2em;
-            }
-            
-            .hero-title {
-                font-size: 2.2em;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1em;
-            }
-            
-            .catchphrase {
-                font-size: 1.2em;
-                padding: 12px 25px;
-            }
-            
-            .facilities-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .facility-card {
-                padding: 20px;
-            }
-            
-            nav a {
-                margin: 0 8px;
-                padding: 8px 15px;
-                font-size: 0.9em;
-            }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .facility-card {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        .facility-card:nth-child(1) { animation-delay: 0.1s; }
-        .facility-card:nth-child(2) { animation-delay: 0.2s; }
-        .facility-card:nth-child(3) { animation-delay: 0.3s; }
-        .facility-card:nth-child(4) { animation-delay: 0.4s; }
-        .facility-card:nth-child(5) { animation-delay: 0.5s; }
-        .facility-card:nth-child(6) { animation-delay: 0.6s; }
-    </style>
+    <title>施設案内 - グリーンピア近江八幡ゴルフ練習場</title>  
+    <link rel="stylesheet" href="style-f.css">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="グリーンピア近江八幡ゴルフ練習場" />
+    <meta name="format-detection" content="グリーンピア近江八幡ゴルフ練習場">
+    <link rel="shortcut　icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
 </head>
+
+  <header class="header">
+   <div class="logo-wrapper">
+    <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
 <body>
     <header>
         <div class="container">
@@ -333,15 +23,39 @@
         </div>
     </header>
     
-    <nav>
-        <div class="container">
-            <a href="#driving-range">ドライビングレンジ</a>
-            <a href="#putting">パッティング</a>
-            <a href="#bunker">バンカー練習</a>
-            <a href="#amenities">アメニティ</a>
-            <a href="#access">アクセス</a>
-        </div>
+     <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+      <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
+    </div>
+
+    <!-- サイドメニュー -->
+    <nav id="sideMenu" class="side-menu">
+       <img id="closeIcon" src="close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
+        <ul>
+         <li><a href="service.html">料金表</a></li>
+         <li><a href="facilities.html">施設案内</a></li>
+         <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+         <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+         <li><a href="member.html">メンバー制度</a></li>
+         <li><a href="faq.html">よくあるご質問</a></li>
+         <li><a href="contact.html">お問合せ</a></li>
+       </ul>
     </nav>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="service.html">料金表</a></li>
+        <li><a href="facilities.html">施設案内</a></li>
+        <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+        <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+        <li><a href="member.html">メンバー制度</a></li>
+        <li><a href="faq.html">よくあるご質問</a></li>
+        <li><a href="contact.html">お問合せ</a></li>
+      </ul>
+     </nav>
+  </header>
+
     
     <main>
         <div class="container">
@@ -349,7 +63,7 @@
             <section class="hero-section">
                 <h1 class="hero-title">施設のご案内</h1>
                 <p class="hero-subtitle">最新設備で快適な練習環境をご提供します</p>
-                <div class="catchphrase">爽快なスイングをご堪能下さいねっ</div>
+                <div class="catchphrase">爽快なスイングをご堪能下さいねっ!</div>
             </section>
             
             <!-- Facilities Grid -->
