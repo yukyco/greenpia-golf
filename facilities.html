@@ -8,19 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="グリーンピア近江八幡ゴルフ練習場" />
     <meta name="format-detection" content="グリーンピア近江八幡ゴルフ練習場">
-    <link rel="shortcut　icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
 </head>
 
-  <header class="header">
-   <div class="logo-wrapper">
-    <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
-<body>
-    <header>
-        <div class="container">
-            <h1 class="logo">グリーンピア近江八幡ゴルフ練習場</h1>
-            <p class="subtitle">施設案内 - 充実した練習環境をご提供</p>
-        </div>
+  <body>
+    <header class="header">
+     <div class="logo-wrapper">
+       <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
+      </div>
     </header>
     
      <!-- ハンバーガーメニュー -->
@@ -62,7 +58,6 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <h1 class="hero-title">施設のご案内</h1>
-                <p class="hero-subtitle">最新設備で快適な練習環境をご提供します</p>
                 <div class="catchphrase">爽快なスイングをご堪能下さいねっ!</div>
             </section>
             
@@ -146,46 +141,47 @@
                     </ul>
                 </div>
             </section>
-            
-            <!-- Statistics Section -->
-            <section class="stats-section">
-                <div class="container">
-                    <h2 style="font-size: 2.5em; margin-bottom: 20px;">施設データ</h2>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">2</span>
-                            <div class="stat-label">フロア構成</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">17</span>
-                            <div class="stat-label">営業時間</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">6</span>
-                            <div class="stat-label">プロ・コーチ</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">365</span>
-                            <div class="stat-label">営業日数</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
     
-    <footer>
-        <div class="container">
-            <div class="contact-info">
-                <h3 style="margin-bottom: 15px; font-size: 1.5em;">グリーンピア近江八幡ゴルフ練習場</h3>
-                <p><strong>住所:</strong> 〒523-0023 滋賀県近江八幡市倉橋部町146‐5</p>
-                <p><strong>TEL:</strong> 0748-37-2010 | <strong>FAX:</strong> 0748-37-8115</p>
-                <p style="margin-top: 15px;"><strong>営業時間:</strong> 早朝6:00〜23:00 | フロント: 10:00〜23:00</p>
-                <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
-                    アクセス良好 | 駐車場完備 | 初心者歓迎
-                </p>
+   <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+            <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+            <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="lesson.html">レッスン日程</a>
+            <a href="holidays.html">お休みカレンダー</a>
+            <a href="contact.html">お問い合わせ</a>
             </div>
         </div>
-    </footer>
+   </footer>
+       
+    <!-- <div class="container">
+            <div class="footer-content">
+                <img src="https://greenpia-golf.com/wp-content/uploads/2023/05/bg_3-1024x631.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="facility-image">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 15px; font-size: 1.5em;">グリーンピア近江八幡ゴルフ練習場</h3>
+                    <p><strong>住所:</strong> 〒523-0023<br>
+                    滋賀県近江八幡市倉橋部町146‐5</p>
+                    <p><strong>TEL:</strong> 0748-37-2010</p>
+                    <p><strong>FAX:</strong> 0748-37-8115</p>
+                </div>
+            </div>
+        </div> -->
+
+    <script src="script.js"></script>
+     
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.right = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.getElementById('sideMenu').style.right = '-100%';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
