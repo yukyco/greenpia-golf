@@ -32,6 +32,7 @@
         /* ロゴ画像の中央表示 */
         .logo-wrapper {
             margin-bottom: 1em;
+            text-align: center;
            }
         .logo-img {
             height: 120px;
