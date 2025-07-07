@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>営業案内・料金表 - グリーンピア近江八幡ゴルフ練習場</title>
-    <link rel="stylesheet" href="style-ser.css">
-    <!--<link rel="stylesheet" href="style.css">-->
     <meta http-equiv="X-UA-Compatible" content="グリーンピア近江八幡ゴルフ練習場" />
     <meta name="format-detection" content="グリーンピア近江八幡ゴルフ練習場">
+    <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
 </head>
@@ -53,6 +52,14 @@
       </ul>
      </nav>
   </header>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>営業案内・料金表</h1>
+            <p class="subtitle">グリーンピア近江八幡ゴルフ練習場</p>
+        </div>
+    </header>
 
     <main>
         <div class="container">
@@ -204,8 +211,8 @@
             </div>
         </div>
    </footer>
-       
-   <script>
+
+    <script>
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -219,10 +226,10 @@
                 }
             });
         }, observerOptions);
-  
-       // document.querySelectorAll('.fade-in').forEach(el => {
-       //     observer.observe(el);
-      //  }); //
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
         // Interactive hover effects
         document.querySelectorAll('.overview-card').forEach(card => {
@@ -269,7 +276,6 @@
             });
         });
     </script>
-    
         <script src="script.js"></script>
      
     <script>
