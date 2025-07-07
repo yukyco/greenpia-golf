@@ -145,7 +145,7 @@
         }
         
         .parking-info::before {
-            content: "🅿️";
+            content: "";
             font-size: 2rem;
             display: block;
             margin-bottom: 10px;
