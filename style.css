@@ -117,29 +117,40 @@
 
 
         /* スライドショー */
-  
         .slider {
-            position: relative;
-            width: 100vw; /* ← 幅を100%の画面サイズに */
-            height: 80vh;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            }
+          position: relative;
+          width: 100vw;
+          height: 80vh;
+          overflow: hidden;
+          margin: 0 auto;
+          padding: 0;
+        }
 
         .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius:10px; /* 角丸 */
-            overflow: hidden;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            }
-            .slide.active {
-            opacity: 1;
-            }
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          border-radius: 10px;
+        }
+
+        .slide.active {
+          opacity: 1;
+        }
+
+        /* スマホ対応 */
+        @media screen and (max-width: 768px) {
+          .slider {
+            height: 50vh;
+          }
+
+          .slide {
+            border-radius: 0;
+          }
+        }
+
 
 
         /* Main Content */
