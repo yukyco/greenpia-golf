@@ -277,14 +277,13 @@
             border: 5px solid #006634;
         }
         
-        .coach-name {
+        .coach-top {
             font-size: 1.0em;
             font-weight: bold;
             color: #fff;
             margin-bottom: 5px;
         }
 
-        
         /* SNS Section */
         .sns-section {
             text-align: center;

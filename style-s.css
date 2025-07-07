@@ -121,12 +121,12 @@
         }
         
         .coach-name {
-            font-size: 1.6em;
-            font-weight: 700;
-            color: #2d5a27;
-            margin-bottom: 10px;
-            text-align: center;
+            font-size: 1.0em;
+            font-weight: bold;
+            color: #006634;
+            margin-bottom: 5px;
         }
+
         
         .coach-title {
             color: #4a7c59;
