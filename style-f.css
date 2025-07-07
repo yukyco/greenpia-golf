@@ -18,6 +18,16 @@
             padding: 0 20px;
         }
         
+ /* お問い合せだけボタン風に */
+            .contact-btn {
+                background: linear-gradient(135deg, #FF8630, #fbbf24);
+                padding: 2px 8px;
+                border-radius: 5px;
+                font-weight: bold;
+                color: #92400e;
+                }
+
+            
         /* Header 
         header {
             background: linear-gradient(135deg, #2d5a3d, #4a7c59);
@@ -25,21 +35,9 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }*/
-        
-        .logo {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        /* Navigation */
+
+        Navigation 
         nav {
             background: rgba(45, 90, 61, 0.9);
             padding: 15px 0;
@@ -61,7 +59,20 @@
         nav a:hover {
             background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
+        }*/
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+    
         
         /* Main Content */
         main {

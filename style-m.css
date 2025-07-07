@@ -67,6 +67,27 @@
             padding: 3rem 0;
         }
 
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(45, 90, 61, 0.1), rgba(74, 124, 89, 0.1));
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-title {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3em;
+            color: #4a7c59;
+            margin-bottom: 30px;
+        }
+
         .announcement {
             background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
             border: 2px solid #7fbc8c;
@@ -259,7 +280,7 @@
             font-size: 2rem;
             font-weight: 700;
             text-align: center;
-            color: #c0392b;
+            color: #006634;
             margin-bottom: 1.5rem;
         }
 
@@ -291,6 +312,16 @@
         .unavailable .membership-title {
             color: #6c757d;
         }
+
+        
+        ul {
+            padding-left:0;
+        }
+
+        li {
+            list-style:none;
+        }
+        
 
         /* Footer */
         footer {
@@ -351,3 +382,8 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+            .side-menu,
+            .overlay {
+            display: none !important;
+            }
