@@ -34,7 +34,7 @@
             text-align: center;
            }
         .logo-img {
-            height: 120px;
+            height: 100px;
             width: auto;
             display: inline-block;
             justify-content: center;
@@ -49,13 +49,13 @@
 
             @media screen and (max-width: 768px) {
             .logo-img {
-                height: 52px; /* スマホ時は少し小さく */
+                height: 42px; /* スマホ時は少し小さく */
                 }
             }
 
             @media screen and (max-width: 768px) {
             .logo-img {
-                height: 80px;
+                height: 60px;
             }
             .nav-list {
                 flex-direction: column;
@@ -527,8 +527,8 @@
 }
 
 .hamburger-menu img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 
