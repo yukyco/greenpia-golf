@@ -280,7 +280,7 @@
         .coach-name {
             font-size: 1.0em;
             font-weight: bold;
-            color: #006634;
+            color: #fff;
             margin-bottom: 5px;
         }
 
@@ -470,7 +470,7 @@
 }
 
 .mobile-menu {
-  position: fixed;
+  position: fixed; 
   right: -300px;
   top: 0;
   width: 300px;
@@ -530,7 +530,7 @@
 /* スマホ用メニュー */
 /* ハンバーガーアイコン */
 .hamburger-menu {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   z-index: 1001;
@@ -538,8 +538,8 @@
 }
 
 .hamburger-menu img {
-  width: 50px;
-  height: 50px;
+  width: 66px;
+  height: 66px;
   cursor: pointer;
 }
 
