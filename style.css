@@ -40,7 +40,6 @@
             justify-content: center;
            }
 
-
       .logo {
             font-size: 2.5em;
             font-weight: bold;
@@ -48,17 +47,15 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-
-
             @media screen and (max-width: 768px) {
             .logo-img {
-                height: 45px; /* スマホ時は少し小さく */
+                height: 52px; /* スマホ時は少し小さく */
                 }
             }
 
             @media screen and (max-width: 768px) {
             .logo-img {
-                height: 60px;
+                height: 80px;
             }
             .nav-list {
                 flex-direction: column;
@@ -530,8 +527,8 @@
 }
 
 .hamburger-menu img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
 }
 
