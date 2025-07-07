@@ -8,7 +8,6 @@
             font-family: 'Noto Sans JP', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #88d8a3 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -23,9 +22,7 @@
             text-align: center;
             margin-bottom: 50px;
             padding: 50px 0;
-            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
             color: white;
-            border-radius: 25px;
             box-shadow: 0 25px 50px rgba(45, 90, 39, 0.3);
             position: relative;
             overflow: hidden;
@@ -144,6 +141,7 @@
             border-collapse: collapse;
             margin-bottom: 20px;
             background: #f8fffe;
+            color: #4a7c59;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(45, 90, 39, 0.1);

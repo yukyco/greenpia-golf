@@ -12,13 +12,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
 </head>
 
-  <header class="header">
-   <div class="logo-wrapper">
-    <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
-   </div>
-</head>
-
 <body>
+    <header class="header">
+  <div class="logo-wrapper">
+    <img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img">
+  </div>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+      <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
+    </div>
+
+    <!-- サイドメニュー -->
+    <nav id="sideMenu" class="side-menu">
+       <img id="closeIcon" src="close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
+        <ul>
+         <li><a href="service.html">料金表</a></li>
+         <li><a href="facilities.html">施設案内</a></li>
+         <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+         <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+         <li><a href="member.html">メンバー制度</a></li>
+         <li><a href="access.html">アクセス</a></li>
+         <li><a href="faq.html">よくあるご質問</a></li>
+         <li><a href="contact.html">お問合せ</a></li>
+       </ul>
+    </nav>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="service.html">料金表</a></li>
+        <li><a href="facilities.html">施設案内</a></li>
+        <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+        <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+        <li><a href="member.html">メンバー制度</a></li>
+        <li><a href="access.html">アクセス</a></li>
+        <li><a href="faq.html">よくあるご質問</a></li>
+        <li class="contact-btn"><a href="contact.html">お問合せ</a></li>
+      </ul>
+     </nav>
+  </header>
+
     <div class="golf-bg">
         <div class="header">
             <div class="container">

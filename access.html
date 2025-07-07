@@ -30,6 +30,7 @@
          <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
          <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
          <li><a href="member.html">メンバー制度</a></li>
+         <li><a href="access.html">アクセス</a></li>
          <li><a href="faq.html">よくあるご質問</a></li>
          <li><a href="contact.html">お問合せ</a></li>
        </ul>
@@ -43,6 +44,7 @@
         <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
         <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
         <li><a href="member.html">メンバー制度</a></li>
+        <li><a href="access.html">アクセス</a></li>
         <li><a href="faq.html">よくあるご質問</a></li>
         <li><a href="contact.html">お問合せ</a></li>
       </ul>
@@ -114,6 +116,98 @@
                 observer.observe(element);
             });
         });
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+            <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+            <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="school-lesson.html">レッスン日程</a>
+            <a href="holidays.html">お休みカレンダー</a>
+            <a href="contact.html">お問い合わせ</a>
+            </div>
+        </div>
+   </footer>
+       
+   <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+  
+       // document.querySelectorAll('.fade-in').forEach(el => {
+       //     observer.observe(el);
+      //  }); //
+
+        // Interactive hover effects
+        document.querySelectorAll('.overview-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02) rotateX(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+            });
+        });
+
+        // Pricing card animations
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Table row hover effects
+        document.querySelectorAll('.time-table tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.background = 'rgba(127, 188, 140, 0.2)';
+                row.style.transform = 'scale(1.02)';
+            });
+            
+            row.addEventListener('mouseleave', () => {
+                row.style.background = '';
+                row.style.transform = 'scale(1)';
+            });
+        });
+
+        // Add pulse effect to highlight prices
+        document.querySelectorAll('.price').forEach(price => {
+            price.addEventListener('mouseenter', () => {
+                price.style.animation = 'pulse 0.5s ease-in-out';
+            });
+            
+            price.addEventListener('animationend', () => {
+                price.style.animation = '';
+            });
+        });
+    </script>
+    
+        <script src="script.js"></script>
+     
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.right = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.getElementById('sideMenu').style.right = '-100%';
+            document.getElementById('overlay').style.display = 'none';
+        }
     </script>
 </body>
 </html>

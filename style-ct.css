@@ -57,7 +57,7 @@
             font-size: 1.8rem;
             text-align: center;
         }
-        
+       
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -168,6 +168,14 @@
         .notice h3 {
             margin-bottom: 1rem;
             color: #2c5530;
+        }
+
+                ul {
+            padding-left:0;
+        }
+
+        li {
+            list-style:none;
         }
         
         .golf-bg {
