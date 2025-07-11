@@ -18,7 +18,7 @@
             padding: 0 20px;
         }
 
-      /* Header */
+        /* Header */
         /* 全体のヘッダー背景色と中央寄せ */
         .header {
             background-color: #006634;
@@ -31,15 +31,14 @@
 
         /* ロゴ画像の中央表示 */
         .logo-wrapper {
-            margin-bottom: 1em;
+            text-align: center;
            }
         .logo-img {
-            height: 120px;
+            height: 100px;
             width: auto;
             display: inline-block;
             justify-content: center;
            }
-
 
       .logo {
             font-size: 2.5em;
@@ -48,28 +47,9 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .hero-section {
-            text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, rgba(45, 90, 61, 0.1), rgba(74, 124, 89, 0.1));
-            border-radius: 30px;
-        }
-        
-        .hero-title {
-            font-size: 3em;
-            color: #fff;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3em;
-            color: #4a7c59;
-        }
-
             @media screen and (max-width: 768px) {
             .logo-img {
-                height: 45px; /* スマホ時は少し小さく */
+                height: 42px; /* スマホ時は少し小さく */
                 }
             }
 
@@ -82,6 +62,17 @@
                 gap: 1em;
                }
             }
+           @media screen and (max-width: 768px) {
+            .logo-wrapper {
+               display: flex;
+               justify-content: flex-start; /* 左寄せ */
+               padding-left: 1em; /* 任意：少し余白 */
+             }
+
+            .logo-img {
+               margin: 0;
+              }
+             }
 
         /* メニューリストの中央揃え */
             .nav-list {
