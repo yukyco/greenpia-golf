@@ -9,6 +9,7 @@
             line-height: 1.6;
             background-color: #006634;
             color: white; /* 必要なら文字色も調整 */
+            overflow-x: hidden;
         }
         
         .container {
