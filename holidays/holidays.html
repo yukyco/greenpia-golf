@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コーチ年間スケジュールカレンダー 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+            background: #fff; /* 背景を白など明るくする */
+            min-height: 100vh;
+            color: #333;
+        }
+
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .coaches-section {
+            margin-bottom: 30px;
+        }
+
+        .coaches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .coach-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .coach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .coach-card.selected {
+            background: #3498db;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .coach-name {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .calendar-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            margin-bottom: 20px;
+        }
+
+        .month-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .current-month {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .day-header {
+            background: #34495e;
+            color: white;
+            padding: 15px 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .day {
+            background: white;
+            min-height: 100px;
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .day:hover {
+            background: #f8f9fa;
+            border-color: #3498db;
+        }
+
+        .day.other-month {
+            background: #f8f9fa;
+            color: #bdc3c7;
+        }
+
+        .day.today {
+            background: #e8f5e8;
+            border-color: #27ae60;
+        }
+
+        .day.has-holiday {
+            background: #ffeaa7;
+        }
+
+        .day-number {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .schedule-active, .schedule-cancelled {
+            font-size: 0.75em;
+            margin-bottom: 2px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .holiday-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .holiday-form h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .submit-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+        }
+
+        .holidays-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .holidays-list h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .holiday-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .delete-btn {
+            background: #fff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .save-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* スマートフォン対応のレスポンシブデザイン */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .coaches-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .coach-card {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .calendar-section {
+                padding: 15px;
+            }
+
+            .month-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .current-month {
+                font-size: 1.2em;
+            }
+
+            .calendar {
+                gap: 1px;
+            }
+
+            .day-header {
+                padding: 10px 3px;
+                font-size: 0.8em;
+            }
+
+            .day {
+                min-height: 80px;
+                padding: 5px;
+                font-size: 0.8em;
+            }
+
+            .schedule-active, .schedule-cancelled {
+                font-size: 0.6em;
+                padding: 1px 3px;
+                margin-bottom: 1px;
+            }
+
+            .holiday-form,
+            .holidays-list {
+                padding: 15px;
+            }
+
+            .holiday-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .delete-btn {
+                align-self: flex-end;
+            }
+
+            .save-indicator {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.8em;
+            }
+        }
+
+        /* より小さなスマートフォン対応 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.3em;
+            }
+
+            .coaches-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calendar-section {
+                padding: 10px;
+            }
+
+            .day {
+                min-height: 60px;
+                padding: 3px;
+            }
+
+            .day-header {
+                padding: 8px 2px;
+                font-size: 0.7em;
+            }
+
+            .schedule-active, .schedule-cancelled {
+                font-size: 0.5em;
+                padding: 1px 2px;
+            }
+
+            .form-group select,
+            .form-group input {
+                font-size: 16px; /* iOSでのズーム防止 */
+            }
+        }
+
+        /* タブレット対応 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .coaches-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .day {
+                min-height: 90px;
+            }
+        }
+
+        /* 横向きスマートフォン対応 */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .coaches-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .day {
+                min-height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>コーチ年間スケジュールカレンダー 2025</h1>
+            <p>各コーチの休み申請と年間スケジュール管理</p>
+        </div>
+
+        <div class="coaches-section">
+            <div class="coaches-grid" id="coachesGrid">
+                <!-- コーチカードがここに生成されます -->
+            </div>
+        </div>
+
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <div class="month-nav">
+                    <button class="nav-btn" onclick="changeMonth(-1)">≪ 前月</button>
+                    <div class="current-month" id="currentMonth"></div>
+                    <button class="nav-btn" onclick="changeMonth(1)">次月 ≫</button>
+                </div>
+            </div>
+
+            <div class="calendar" id="calendar">
+                <!-- カレンダーがここに生成されます -->
+            </div>
+
+            <div class="holiday-form">
+                <h3>休み申請</h3>
+                <div class="form-group">
+                    <label for="coachSelect">コーチ選択:</label>
+                    <select id="coachSelect">
+                        <option value="">コーチを選択してください</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="holidayType">申請タイプ:</label>
+                    <select id="holidayType" onchange="toggleDateInputs()">
+                        <option value="single">単日</option>
+                        <option value="multiple">複数日（期間指定）</option>
+                    </select>
+                </div>
+                <div class="form-group" id="singleDateGroup">
+                    <label for="holidayDate">休み日:</label>
+                    <input type="date" id="holidayDate">
+                </div>
+                <div class="form-group" id="multipleDateGroup" style="display: none;">
+                    <label for="holidayStartDate">開始日:</label>
+                    <input type="date" id="holidayStartDate">
+                </div>
+                <div class="form-group" id="multipleDateEndGroup" style="display: none;">
+                    <label for="holidayEndDate">終了日:</label>
+                    <input type="date" id="holidayEndDate">
+                </div>
+                <div class="form-group">
+                    <label for="holidayReason">理由 (任意):</label>
+                    <input type="text" id="holidayReason" placeholder="休みの理由を入力">
+                </div>
+                <button class="submit-btn" onclick="addHoliday()">休みを申請</button>
+            </div>
+
+            <div class="holidays-list">
+                <h3>申請済み休み一覧</h3>
+                <div style="margin-bottom: 15px;">
+                    <button onclick="exportData()" style="background: #8AEDDD; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 14px;">データエクスポート</button>
+                    <button class="data-btn import-btn" onclick="triggerImport()">データインポート</button>
+                    <input type="file" id="importFile" class="file-input" accept=".json" onchange="importData(event)">
+                </div>
+                <div id="holidaysList">
+                    <p>管理者以外は削除はできません</p>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- キャンバスを表示 -->
+    <canvas id="starCanvas"></canvas>
+
+    <div class="save-indicator" id="saveIndicator" style="display: none;">
+        💾データは自動的に保存されます
+    </div>
+
+    <script>
+        // グローバル変数
+        const coaches = [
+            { id: 'yoshii', name: '吉井プロ', color: '#FF6B6B' },
+            { id: 'hirota', name: '廣田プロ', color: '#4ECDC4' },
+            { id: 'nobuta', name: '信田プロ', color: '#45B7D1' },
+            { id: 'fujita', name: '藤田プロ', color: '#96CEB4' },
+            { id: 'kaneko', name: '金子プロ', color: '#FF5B2E' },
+            { id: 'nakanishi', name: '中西プロ', color: '#DDA0DD' }
+        ];
+
+        // コーチスケジュール設定（定期スクール日程）
+        const coachSchedules = {
+            'yoshii': { // 吉井プロ
+                days: [5], // 金曜日
+                times: ['13:00-14:30', '15:00-16:30', '16:30-18:00', '17:00-', '17:30-'],
+                type: '一般スクール/Jrスクール'
+            },
+            'hirota': { // 廣田プロ  
+                days: [6, 0], // 土・日曜日
+                times: ['10:00-15:00'],
+                type: '一般スクール'
+            },
+            'nobuta': { // 信田プロ
+                days: [1, 4, 6, 0], // 月・木・土・日曜日
+                times: ['10:30-12:00', '13:00-14:30'],
+                type: '一般スクール/個別レッスン'
+            },
+            'fujita': { // 藤田プロ
+                days: [2], // 火曜日
+                times: ['19:00-20:00'],
+                type: '一般スクール'
+            },
+            'kaneko': { // 金子プロ
+                days: [2], // 火曜日
+                times: ['17:30-18:30'],
+                type: '一般スクール'
+            },
+            'nakanishi': { // 中西プロ
+                days: [1, 6, 0], // 月・土・日曜日
+                times: ['指定なし'],
+                type: '一般スクール'
+            }     
+        };
+
+        let currentDate = new Date();
+        let holidays = [];
+        let selectedCoach = null;
+
+        // 初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+            renderCoaches();
+            renderCalendar();
+            populateCoachSelect();
+        });
+
+        // コーチカード表示
+        function renderCoaches() {
+            const grid = document.getElementById('coachesGrid');
+            grid.innerHTML = coaches.map(coach => `
+                <div class="coach-card" onclick="selectCoach('${coach.id}')" data-coach-id="${coach.id}">
+                    <div class="coach-name" style="color: ${coach.color}">${coach.name}</div>
+                </div>
+            `).join('');
+        }
+
+        // コーチ選択
+        function selectCoach(coachId) {
+            selectedCoach = coachId;
+            document.querySelectorAll('.coach-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            document.querySelector(`[data-coach-id="${coachId}"]`).classList.add('selected');
+            renderCalendar();
+        }
+
+        // カレンダー表示
+        function renderCalendar() {
+            const calendar = document.getElementById('calendar');
+            const monthElement = document.getElementById('currentMonth');
+            
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            monthElement.textContent = `${year}年 ${month + 1}月`;
+            
+            // 曜日ヘッダー
+            const dayHeaders = ['日', '月', '火', '水', '木', '金', '土'];
+            let calendarHTML = dayHeaders.map(day => 
+                `<div class="day-header">${day}</div>`
+            ).join('');
+            
+            // 月の最初の日と最後の日
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            // カレンダーの日付を生成
+            const today = new Date();
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const isCurrentMonth = date.getMonth() === month;
+                const isToday = date.toDateString() === today.toDateString();
+                // タイムゾーンの影響を避けるため、ローカル日付から文字列を作成
+                const year = date.getFullYear();
+                const month_num = String(date.getMonth() + 1).padStart(2, '0');
+                const day_num = String(date.getDate()).padStart(2, '0');
+                const dateString = `${year}-${month_num}-${day_num}`;
+                
+                // その日の休みを取得
+                const dayHolidays = holidays.filter(h => h.date === dateString);
+                const coachHolidays = selectedCoach ? 
+                    dayHolidays.filter(h => h.coachId === selectedCoach) : 
+                    dayHolidays;
+                
+                // その日のスクール予定を取得
+                const dayOfWeek = date.getDay();
+                const scheduledCoaches = [];
+                Object.keys(coachSchedules).forEach(coachId => {
+                    const schedule = coachSchedules[coachId];
+                    if (schedule.days.includes(dayOfWeek)) {
+                        const coach = coaches.find(c => c.id === coachId);
+                        if (coach) {
+                            const isOnHoliday = dayHolidays.some(h => h.coachId === coachId);
+                            scheduledCoaches.push({
+                                coach: coach,
+                                schedule: schedule,
+                                isOnHoliday: isOnHoliday
+                            });
+                        }
+                    }
+                });
+                
+                let dayClass = 'day';
+                if (!isCurrentMonth) dayClass += ' other-month';
+                if (isToday) dayClass += ' today';
+                if (dayHolidays.length > 0) dayClass += ' has-holiday';
+                
+                let scheduleInfo = '';
+                if (selectedCoach) {
+                    // 特定のコーチが選択されている場合
+                    const selectedCoachSchedule = scheduledCoaches.find(s => s.coach.id === selectedCoach);
+                    if (selectedCoachSchedule) {
+                        const timeInfo = selectedCoachSchedule.schedule.times[0] !== '指定なし' ? 
+                            selectedCoachSchedule.schedule.times[0] : 'スクール';
+                        if (selectedCoachSchedule.isOnHoliday) {
+                            scheduleInfo = `<div class="schedule-cancelled" style="background: #ffcdd2; color: #d32f2f; padding: 2px 5px; border-radius: 3px; font-size: 0.7em; margin-bottom: 2px;">休み (${timeInfo})</div>`;
+                        } else {
+                            scheduleInfo = `<div class="schedule-active" style="background: ${selectedCoachSchedule.coach.color}; color: white; padding: 2px 5px; border-radius: 3px; font-size: 0.7em; margin-bottom: 2px;">${timeInfo}</div>`;
+                        }
+                    }
+                    // 休み表示
+                    const coachHolidayInfo = coachHolidays.map(h => 
+                        `<div class="holiday-indicator" style="background: #f44336; color: white; padding: 2px 5px; border-radius: 3px; font-size: 0.7em;">休み</div>`
+                    ).join('');
+                    scheduleInfo += coachHolidayInfo;
+                } else {
+                    // 全コーチ表示の場合
+                    if (scheduledCoaches.length > 0) {
+                        scheduleInfo = scheduledCoaches.map(s => {
+                            const timeInfo = s.schedule.times[0] !== '指定なし' ? 
+                                s.schedule.times[0] : 'スクール';
+                            if (s.isOnHoliday) {
+                                return `<div class="schedule-cancelled" style="background: #ffcdd2; color: #151413; padding: 1px 3px; border-radius: 2px; font-size: 0.7em; margin-bottom: 1px;">休み ${s.coach.name.replace('プロ', '')}</div>`;
+                            } else {
+                                return `<div class="schedule-active" style="background: ${s.coach.color}; color: white; padding: 1px 3px; border-radius: 2px; font-size: 0.7em; margin-bottom: 1px;">${s.coach.name.replace('プロ', '')} ${timeInfo.split('-')[0]}</div>`;
+                            }
+                        }).join('');
+                    }
+                    // 休みのみの表示
+                    if (dayHolidays.length > 0 && scheduledCoaches.length === 0) {
+                        scheduleInfo = `<div class="coach-holidays" style="font-size: 0.7em; color: #666;">${dayHolidays.length}名休み</div>`;
+                    }
+                }
+                
+                calendarHTML += `
+                    <div class="${dayClass}" onclick="selectDate('${dateString}')" data-date="${dateString}">
+                        <div class="day-number">${date.getDate()}</div>
+                        ${scheduleInfo}
+                    </div>
+                `;
+            }
+            
+            calendar.innerHTML = calendarHTML;
+        }
+
+        // 月変更
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            renderCalendar();
+        }
+
+        // 日付入力の表示切り替え
+        function toggleDateInputs() {
+            const holidayType = document.getElementById('holidayType').value;
+            const singleDateGroup = document.getElementById('singleDateGroup');
+            const multipleDateGroup = document.getElementById('multipleDateGroup');
+            const multipleDateEndGroup = document.getElementById('multipleDateEndGroup');
+            
+            if (holidayType === 'single') {
+                singleDateGroup.style.display = 'block';
+                multipleDateGroup.style.display = 'none';
+                multipleDateEndGroup.style.display = 'none';
+            } else {
+                singleDateGroup.style.display = 'none';
+                multipleDateGroup.style.display = 'block';
+                multipleDateEndGroup.style.display = 'block';
+            }
+        }
+
+        // 日付選択
+        function selectDate(dateString) {
+            const holidayType = document.getElementById('holidayType').value;
+            if (holidayType === 'single') {
+                document.getElementById('holidayDate').value = dateString;
+            } else {
+                // 複数日の場合、開始日が空なら開始日に、そうでなければ終了日に設定
+                const startDate = document.getElementById('holidayStartDate').value;
+                if (!startDate) {
+                    document.getElementById('holidayStartDate').value = dateString;
+                } else {
+                    document.getElementById('holidayEndDate').value = dateString;
+                }
+            }
+        }
+
+        // コーチ選択肢作成
+        function populateCoachSelect() {
+            const select = document.getElementById('coachSelect');
+            select.innerHTML = '<option value="">コーチを選択してください</option>' +
+                coaches.map(coach => `<option value="${coach.id}">${coach.name}</option>`).join('');
+        }
+
+        // 休み追加
+        function addHoliday() {
+            const coachId = document.getElementById('coachSelect').value;
+            const holidayType = document.getElementById('holidayType').value;
+            const reason = document.getElementById('holidayReason').value;
+            
+            if (!coachId) {
+                alert('コーチを選択してください');
+                return;
+            }
+            
+            let dates = [];
+            
+            if (holidayType === 'single') {
+                const date = document.getElementById('holidayDate').value;
+                if (!date) {
+                    alert('休み日を選択してください');
+                    return;
+                }
+                dates = [date];
+            } else {
+                const startDate = document.getElementById('holidayStartDate').value;
+                const endDate = document.getElementById('holidayEndDate').value;
+                
+                if (!startDate || !endDate) {
+                    alert('開始日と終了日を選択してください');
+                    return;
+                }
+                
+                if (startDate > endDate) {
+                    alert('開始日は終了日より前の日付を選択してください');
+                    return;
+                }
+                
+                // 期間内のすべての日付を取得
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                const currentDate = new Date(start);
+                
+                while (currentDate <= end) {
+                    const year = currentDate.getFullYear();
+                    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                    const day = String(currentDate.getDate()).padStart(2, '0');
+                    dates.push(`${year}-${month}-${day}`);
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+            }
+            
+            // 重複チェック
+            const duplicates = [];
+            dates.forEach(date => {
+                const exists = holidays.some(h => h.coachId === coachId && h.date === date);
+                if (exists) {
+                    duplicates.push(date);
+                }
+            });
+            
+            if (duplicates.length > 0) {
+                const duplicateText = duplicates.map(date => {
+                    const dateParts = date.split('-');
+                    return `${parseInt(dateParts[1])}月${parseInt(dateParts[2])}日`;
+                }).join(', ');
+                alert(`以下の日は既に休み申請されています: ${duplicateText}`);
+                return;
+            }
+            
+            // 休み申請を追加
+            const baseId = Date.now();
+            dates.forEach((date, index) => {
+                const holiday = {
+                    id: baseId + index,
+                    coachId: coachId,
+                    date: date,
+                    reason: reason,
+                    createdAt: new Date().toISOString(),
+                    isMultiple: holidayType === 'multiple'
+                };
+                holidays.push(holiday);
+            });
+            
+            saveData();
+            renderCalendar();
+            renderHolidaysList();
+            
+            // フォームリセット
+            document.getElementById('coachSelect').value = '';
+            document.getElementById('holidayType').value = 'single';
+            document.getElementById('holidayDate').value = '';
+            document.getElementById('holidayStartDate').value = '';
+            document.getElementById('holidayEndDate').value = '';
+            document.getElementById('holidayReason').value = '';
+            toggleDateInputs();
+            
+            const dayCount = dates.length;
+            const dayText = dayCount === 1 ? '1日' : `${dayCount}日間`;
+            alert(`${dayText}の休み申請を追加しました`);
+            
+            showSaveIndicator();
+        }
+
+        // 休み削除
+        function deleteHoliday(holidayId) {
+            if (confirm('この休み申請を削除しますか？')) {
+                holidays = holidays.filter(h => h.id !== holidayId);
+                saveData();
+                renderCalendar();
+                renderHolidaysList();
+                showSaveIndicator();
+            }
+        }
+
+        // 休み一覧表示
+        function renderHolidaysList() {
+            const list = document.getElementById('holidaysList');
+            
+            if (holidays.length === 0) {
+                list.innerHTML = '<p>申請された休みはありません</p>';
+                return;
+            }
+            
+            const sortedHolidays = holidays.sort((a, b) => {
+                // 文字列として日付を比較（YYYY-MM-DD形式なのでこれで正しくソートされる）
+                return a.date.localeCompare(b.date);
+            });
+            
+            list.innerHTML = sortedHolidays.map(holiday => {
+                const coach = coaches.find(c => c.id === holiday.coachId);
+                // 日付文字列を直接パースしてタイムゾーンの影響を避ける
+                const dateParts = holiday.date.split('-');
+                const year = parseInt(dateParts[0]);
+                const month = parseInt(dateParts[1]);
+                const day = parseInt(dateParts[2]);
+                const formattedDate = `${year}年${month}月${day}日`;
+                
+                return `
+                    <div class="holiday-item">
+                        <div>
+                            <strong style="color: ${coach.color}">${coach.name}</strong> - 
+                            ${formattedDate}
+                            ${holiday.reason ? ` (${holiday.reason})` : ''}
+                        </div>
+                        <button class="delete-btn" onclick="deleteHoliday(${holiday.id})">削除</button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // データ保存
+        function saveData() {
+            const data = {
+                holidays: holidays,
+                version: '1.0',
+                lastSaved: new Date().toISOString()
+            };
+            // ブラウザのローカルストレージに保存
+            try {
+                localStorage.setItem('coachScheduleData', JSON.stringify(data));
+                console.log('データを保存しました:', data);
+            } catch (error) {
+                console.error('データ保存に失敗しました:', error);
+                // フォールバック: メモリ内に保存
+                window.coachScheduleData = data;
+            }
+        }
+
+        // データ読み込み
+        function loadData() {
+            try {
+                // まずローカルストレージから読み込み
+                const savedData = localStorage.getItem('coachScheduleData');
+                if (savedData) {
+                    const data = JSON.parse(savedData);
+                    if (data && data.holidays) {
+                        holidays = data.holidays;
+                        console.log('データを読み込みました:', data);
+                        renderHolidaysList();
+                        return;
+                    }
+                }
+            } catch (error) {
+                console.error('データ読み込みに失敗しました:', error);
+            }
+            
+            // フォールバック: メモリから読み込み
+            const data = window.coachScheduleData;
+            if (data && data.holidays) {
+                holidays = data.holidays;
+                renderHolidaysList();
+            }
+        }
+
+        // 保存表示
+        function showSaveIndicator() {
+            const indicator = document.getElementById('saveIndicator');
+            indicator.style.display = 'block';
+            setTimeout(() => {
+                indicator.style.display = 'none';
+            }, 2000);
+        }
+
+        // 全データクリア
+        function clearAllData() {
+            if (confirm('すべてのデータを削除しますか？この操作は取り消せません。')) {
+                holidays = [];
+                localStorage.removeItem('coachScheduleData');
+                window.coachScheduleData = null;
+                renderCalendar();
+                renderHolidaysList();
+                alert('すべてのデータを削除しました');
+            }
+        }
+
+        // データエクスポート
+        function exportData() {
+            const data = {
+                holidays: holidays,
+                coaches: coaches,
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `coach_schedule_${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+  <!-- 星のスクリプト -->
+ 
+const NUM = 20;
+const SIZE = 0.006;
+const SPEED = 0.06;
+const SCREEN_ROTATION = 0.2;
+
+const canvas = document.getElementById('starCanvas');
+const ctx = canvas.getContext('2d');
+
+function Matrix3() {}
+Matrix3.prototype = {
+  0:1,1:0,2:0,3:0,4:1,5:0,6:0,7:0,8:1,
+  mul: function() {
+    var a = this, b = arguments, c = new Matrix3();
+    c[0]=a[0]*b[0]+a[1]*b[3]+a[2]*b[6];
+    c[1]=a[0]*b[1]+a[1]*b[4]+a[2]*b[7];
+    c[2]=a[0]*b[2]+a[1]*b[5]+a[2]*b[8];
+    c[3]=a[3]*b[0]+a[4]*b[3]+a[5]*b[6];
+    c[4]=a[3]*b[1]+a[4]*b[4]+a[5]*b[7];
+    c[5]=a[3]*b[2]+a[4]*b[5]+a[5]*b[8];
+    c[6]=a[6]*b[0]+a[7]*b[3]+a[8]*b[6];
+    c[7]=a[6]*b[1]+a[7]*b[4]+a[8]*b[7];
+    c[8]=a[6]*b[2]+a[7]*b[5]+a[8]*b[8];
+    return c;
+  },
+  rx: function(t){ var c=Math.cos(t),s=Math.sin(t); return this.mul(1,0,0,0,c,-s,0,s,c); },
+  ry: function(t){ var c=Math.cos(t),s=Math.sin(t); return this.mul(c,0,s,0,1,0,-s,0,c); },
+  rz: function(t){ var c=Math.cos(t),s=Math.sin(t); return this.mul(c,-s,0,s,c,0,0,0,1); }
+};
+
+function Point3d() {}
+Point3d.prototype = {
+  x:0, y:0, z:0,
+  rotate: function(m){
+    var p=new Point3d();
+    p.x=m[0]*this.x+m[1]*this.y+m[2]*this.z;
+    p.y=m[3]*this.x+m[4]*this.y+m[5]*this.z;
+    p.z=m[6]*this.x+m[7]*this.y+m[8]*this.z;
+    return p;
+  }
+};
+
+function random(n){
+  for(var i=0;i<6;i++){ n^=n<<3; n^=n>>2; }
+  return (n&0xffffff)/0x1000000;
+}
+
+function draw(ctx) {
+  const t = new Date() / 1000;
+  const r = new Matrix3().ry(-t * 0.123).rx(0.8).rz(SCREEN_ROTATION);
+  const k = 1 + 1 / NUM;
+
+  for (let i = 0; i < NUM; i++) {
+    let j = t * SPEED + i * k;
+    let p = new Point3d();
+    p.x = random(j); p.y = j % 1; p.z = random(j + 10000);
+    p.x -= 0.5; p.y -= 0.5; p.z -= 0.5;
+    p.y *= -5;
+    p = p.rotate(r);
+    p.x += Math.sin(t * 0.1 + i) * 0.2;
+    p.z += 0.5;
+
+    if (p.z <= 0) continue;
+
+    ctx.save();
+    ctx.globalAlpha = 1 / (p.z + 1.2);
+    ctx.translate(p.x / p.z, p.y / p.z);
+    ctx.scale(SIZE / p.z, SIZE / p.z);
+    ctx.rotate(SCREEN_ROTATION);
+
+    // 丸っこい星を描く
+    ctx.beginPath();
+    const rOuter = 2;
+    const rInner = 0.9;
+    for (let n = 0; n < 10; n++) {
+      const angle = Math.PI * n / 5;
+      const radius = n % 2 === 0 ? rOuter : rInner;
+      const x = Math.sin(angle) * radius;
+      const y = -Math.cos(angle) * radius;
+      if (n === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+
+    const colors = [
+      ['#ffffcc', '#ffccff'],
+      ['#ccffff', '#ffffff'],
+      ['#ffd700', '#fffacd'],
+    ];
+    const rand = Math.floor(Math.random() * colors.length);
+    let grad = ctx.createRadialGradient(0, 0, 0, 0, 0, 3);
+    grad.addColorStop(0, colors[rand][0]);
+    grad.addColorStop(1, colors[rand][1]);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.restore();
+  }
+}
+
+function loop() {
+  const scale = Math.max(canvas.width, canvas.height);
+
+  // ✨ 残像処理で尾を残す（本文が暗くならないように工夫）
+  ctx.globalCompositeOperation = 'destination-out';
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.globalCompositeOperation = 'lighter';
+
+  ctx.save();
+  ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
+  ctx.scale(scale, scale);
+  draw(ctx);
+  ctx.restore();
+}
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+setInterval(loop, 16);
+
+function importData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+
+            if (!Array.isArray(data.holidays)) {
+                alert("インポートデータの形式が正しくありません。");
+                return;
+            }
+
+            holidays = data.holidays;
+            saveData();  // localStorage に保存
+            renderCalendar();  // カレンダー更新
+            renderHolidaysList();  // 一覧更新
+            alert("休みデータをインポートしました。");
+
+        } catch (error) {
+            alert("インポート中にエラーが発生しました: " + error.message);
+        }
+    };
+    reader.readAsText(file);
+}
+
+</script>
+</body>
+</html>
