@@ -733,6 +733,7 @@
 
             .footer-text {
             font-size: 0.9rem;
+            margin-top: 20px;
             margin-bottom: 10px;
             }
 
@@ -746,3 +747,4 @@
             .footer-links a:hover {
             text-decoration: underline;
             }
+
