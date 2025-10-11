@@ -308,18 +308,21 @@
             margin-top: 1em;
         }
 
-        .sns-box {
-        width: 300px; /* 各SNSの幅を統一 */
-        max-width: 90vw;
-        }
+            .job-box {
+              width: auto;          /* SNSセクションの300px制限を解除 */
+              max-width: none;
+            }
+            
+            .job-img {
+              width: 80%;
+              max-width: 600px;
+              height: auto;
+              display: block;
+              margin: 20px auto;
+            }
 
-        .sns-img {
-        width: 100%;
-        border-radius: 10px;
-        }
 
-
-          /* JOB Section */
+          /* JOB Section
         .job-section {
             background: #5AA86B;
             text-align: center;
@@ -342,7 +345,7 @@
 
         .job-img {
             width: 100%;
-        }
+        }　 */
 
             img {
               display: block;
@@ -351,6 +354,21 @@
               max-width: 600px;
             }
 
+.sns-section {
+  text-align: center;
+  color: #fff;
+  background-color: #005b2f;
+  padding: 40px 0;
+}
+
+.sns-section img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+}
 
         
         /* Footer */
