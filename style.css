@@ -293,11 +293,12 @@
             margin-bottom: 5px;
         }
 
-        /* SNS Section */
+        /*  Section */
         .sns-section {
             text-align: center;
             padding: 2em 1em;
             color: white;
+            widht:200px;
         }
 
         .sns-grid {
@@ -305,6 +306,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 2em;
+            widht:200px;
             margin-top: 1em;
         }
 
