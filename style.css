@@ -326,32 +326,40 @@
             }
 
 
-/* JOB Section */
-        .job-section {
-            background: #5AA86B;
-            text-align: center;
-            padding: 2em 1em;
-            color: white;
-        }
-            .job-box {
-              width: auto;
-              max-width: none;
+            /* Job section wrapper */
+            .job-section {
+                text-align: center;
+                padding: 40px 20px;
             }
             
-            .job-img {
-              width: 100%;
-              max-width: 800px;
-              height: auto;
-              display: block;
-              margin: 20px auto;
-            }　
+            /* 中央揃え */
+            .job-wrapper {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .job-box {
+                display: inline-block;
+                text-align: center;
+            }
+            
+            /* Job画像の初期設定（スマホ用） */
+            .job-image {
+                width: 80%;
+                max-width: 600px;
+                height: auto;
+                margin: 20px auto;
+                display: block;
+            }
+            
+            /* PCでは画像を大きく表示する */
+            @media (min-width: 1024px) {
+                .job-image {
+                    width: 100%;
+                    max-width: 900px;
+                }
+            }
 
-        .job-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2em;  
-        }
         
         /* Footer */
 
