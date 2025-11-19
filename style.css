@@ -326,9 +326,10 @@
             }
 
 
+
             .job-section {
                 text-align: center;
-                padding: 40px 20px;
+                padding: 10px 10px;
             }
             
             /* 真ん中に大きく表示する */
@@ -346,9 +347,9 @@
             /* 画像サイズ */
             .job-image {
                 width: 100%;
-                max-width: 700px;
+                max-width: 800px;
                 height: auto;
-                margin: 20px auto;
+                margin: 10px auto;
                 display: block;
             }
             
@@ -366,8 +367,8 @@
             background-color: #006634;
             color: #fff;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+            padding: 10px 10px;
+            margin-top: -30px;
             }
 
             .footer-logo {
@@ -474,206 +475,193 @@
         transition: opacity 1s ease-in-out;
         }
 
- /* 幅を狭くするクラス */
+       /* 幅を狭くするクラス */
         .section.narrow {
             max-width: 800px!important;
             margin: 0 auto;
         }
 
-
-/* レスポンシブ　メニューバー　*/
- .menu-toggle {
-  font-size: 30px;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-  color: white;
-}
-
-.mobile-menu {
-  position: fixed; 
-  right: -300px;
-  top: 0;
-  width: 300px;
-  height: 100%;
-  background: #006634;
-  color: white;
-  padding: 60px 20px;
-  transition: right 0.3s ease;
-  z-index: 1002;
-  border-radius: 2px;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mobile-menu ul li {
-  margin: 20px 0;
-}
-
-.mobile-menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.4);
-  display: none;
-  z-index: 1000;
-}
-
-/* メニューが表示されてるときのクラス */
-.menu-open #mobileMenu {
-  right: 0;
-}
-
-.menu-open #overlay {
-  display: block;
-}
-
-
-@media screen and (min-width: 768px) {
-  .menu-toggle,
-  .mobile-menu,
-  .overlay {
-    display: none;
-  }
-}
-
-/* スマホ用メニュー */
-/* ハンバーガーアイコン */
-.hamburger-menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-  display: none; /* スマホ時のみ表示 */
-}
-
-.hamburger-menu img {
-  width: 66px;
-  height: 66px;
-  cursor: pointer;
-}
-
-/* サイドメニュー */
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  max-width: 300px;
-  height: 100%;
-  background-color: #006634;
-  transition: right 0.3s ease-in-out;
-  z-index: 1002;
-  padding: 60px 20px 20px;
-  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
-  overflow-y: auto;
-}
-
-/* ✖ボタンの位置固定 */
-.side-menu img#closeIcon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-/* メニューリスト */
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 80px;
-}
-
-.side-menu li {
-  margin: 20px 0;
-}
-
-.side-menu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-/* オーバーレイ */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.4);
-  display: none;
-  z-index: 1000;
-}
-
-/* 開いたとき */
-.menu-open #sideMenu {
-  right: 0;
-}
-.menu-open #overlay {
-  display: block;
-}
-
-/* スマホのみ表示 */
-@media screen and (max-width: 768px) {
-  .hamburger-menu {
-    display: block;
-  }
-  .desktop-nav {
-    display: none;
-  }
-}
-
-
-/* top コーチ紹介リンク */
-.coach-button-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center!important; /* 中央揃え */
-  margin-top: 15px;
-}
-
-.coach-button {
-  background: #fff;
-  color: #006634;
-  text-decoration: none;
-  padding: 10px 30px;
-  border-radius: 40px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.coach-button:hover {
-  background: #006634;
-  color: #fff;
-  border: 1px solid #fff;
-}
-
-.job-box {
-  text-align: center;
-  margin: 20px auto;
-}
-
-.job-box img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
-}
+            /* レスポンシブ　メニューバー　*/
+             .menu-toggle {
+              font-size: 30px;
+              cursor: pointer;
+              position: fixed;
+              top: 20px;
+              right: 20px;
+              z-index: 1001;
+              color: white;
+            }
+            
+            .mobile-menu {
+              position: fixed; 
+              right: -300px;
+              top: 0;
+              width: 300px;
+              height: 100%;
+              background: #006634;
+              color: white;
+              padding: 60px 20px;
+              transition: right 0.3s ease;
+              z-index: 1002;
+              border-radius: 2px;
+            }
+            
+            .mobile-menu ul {
+              list-style: none;
+              padding: 0;
+            }
+            
+            .mobile-menu ul li {
+              margin: 20px 0;
+            }
+            
+            .mobile-menu ul li a {
+              color: white;
+              text-decoration: none;
+              font-size: 1.2rem;
+            }
+            
+            .overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              background: rgba(0,0,0,0.4);
+              display: none;
+              z-index: 1000;
+            }
+            
+            /* メニューが表示されてるときのクラス */
+            .menu-open #mobileMenu {
+              right: 0;
+            }
+            
+            .menu-open #overlay {
+              display: block;
+            }
+            
+            
+            @media screen and (min-width: 768px) {
+              .menu-toggle,
+              .mobile-menu,
+              .overlay {
+                display: none;
+              }
+            }
+            
+            /* スマホ用メニュー */
+            /* ハンバーガーアイコン */
+            .hamburger-menu {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              z-index: 1001;
+              display: none; /* スマホ時のみ表示 */
+            }
+            
+            .hamburger-menu img {
+              width: 66px;
+              height: 66px;
+              cursor: pointer;
+            }
+            
+            /* サイドメニュー */
+            .side-menu {
+              position: fixed;
+              top: 0;
+              right: -100%;
+              width: 80%;
+              max-width: 300px;
+              height: 100%;
+              background-color: #006634;
+              transition: right 0.3s ease-in-out;
+              z-index: 1002;
+              padding: 60px 20px 20px;
+              box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
+              overflow-y: auto;
+            }
+            
+            /* ✖ボタンの位置固定 */
+            .side-menu img#closeIcon {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+            }
+            
+            /* メニューリスト */
+            .side-menu ul {
+              list-style: none;
+              padding: 0;
+              margin-top: 80px;
+            }
+            
+            .side-menu li {
+              margin: 20px 0;
+            }
+            
+            .side-menu a {
+              color: #fff;
+              text-decoration: none;
+              font-size: 20px;
+            }
+            
+            /* オーバーレイ */
+            .overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              background: rgba(0,0,0,0.4);
+              display: none;
+              z-index: 1000;
+            }
+            
+            /* 開いたとき */
+            .menu-open #sideMenu {
+              right: 0;
+            }
+            .menu-open #overlay {
+              display: block;
+            }
+            
+            /* スマホのみ表示 */
+            @media screen and (max-width: 768px) {
+              .hamburger-menu {
+                display: block;
+              }
+              .desktop-nav {
+                display: none;
+              }
+            }
+            
+            
+            /* top コーチ紹介リンク */
+            .coach-button-wrapper {
+              width: 100%;
+              display: flex;
+              justify-content: center!important; /* 中央揃え */
+              margin-top: 15px;
+            }
+            
+            .coach-button {
+              background: #fff;
+              color: #006634;
+              text-decoration: none;
+              padding: 10px 30px;
+              border-radius: 40px;
+              font-size: 16px;
+              border: 1px solid #ccc;
+              transition: all 0.3s ease;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .coach-button:hover {
+              background: #006634;
+              color: #fff;
+              border: 1px solid #fff;
+            }
