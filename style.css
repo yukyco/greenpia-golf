@@ -326,37 +326,36 @@
             }
 
 
-            /* Job section wrapper */
             .job-section {
                 text-align: center;
                 padding: 40px 20px;
             }
             
-            /* 中央揃え */
+            /* 真ん中に大きく表示する */
             .job-wrapper {
                 display: flex;
                 justify-content: center;
             }
             
             .job-box {
-                display: inline-block;
+                width: 100%;
+                max-width: 1000px;   /* ← ここがポイント！画像の最大幅の親コンテナを大きくする */
                 text-align: center;
             }
             
-            /* Job画像の初期設定（スマホ用） */
+            /* 画像サイズ */
             .job-image {
-                width: 80%;
-                max-width: 600px;
+                width: 100%;
+                max-width: 900px;
                 height: auto;
                 margin: 20px auto;
                 display: block;
             }
             
-            /* PCでは画像を大きく表示する */
-            @media (min-width: 1024px) {
+            @media (max-width: 768px) {
                 .job-image {
-                    width: 100%;
-                    max-width: 900px;
+                    max-width: 600px;
+                    width: 90%;
                 }
             }
 
