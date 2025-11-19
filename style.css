@@ -300,13 +300,18 @@
             color: white;
             widht:200px;
         }
-
+        .sns-img {
+            width:200px!important;
+            text-align: center;
+            gap: 2em;
+            margin-top: 1em;
+        }
         .sns-grid {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 2em;
-            widht:200px;
+            width:200px;
             margin-top: 1em;
         }
 
