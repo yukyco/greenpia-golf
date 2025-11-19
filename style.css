@@ -339,7 +339,7 @@
             
             .job-box {
                 width: 100%;
-                max-width: 1000px;   /* ← ここがポイント！画像の最大幅の親コンテナを大きくする */
+                max-width: 800px;   /* ← ここがポイント！画像の最大幅の親コンテナを大きくする */
                 text-align: center;
             }
             
