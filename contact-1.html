@@ -11,16 +11,63 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
  </head>
-  
- <body>
-  <div class="container">
-    <div class="header">
-      <h1>お問い合わせフォーム</h1>
-      <p>お気軽にお問い合わせください。3営業日以内にご返信いたします。</p>
+  <body>
+  <header class="header">
+   <div class="logo-wrapper">
+    <a href='/'><img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img"></a>
+   </div>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+      <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
     </div>
+
+    <!-- サイドメニュー -->
+    <nav id="sideMenu" class="side-menu">
+       <img id="closeIcon" src="close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
+        <ul>
+         <li><a href='/service'>料金表</a></li>
+         <li><a href='/facilities'>施設案内</a></li>
+         <li><a href='/golf-coach'>コーチ・プロ紹介</a></li>
+         <li><a href='/school-lesson'>スクール・レッスン日程</a></li>
+         <li><a href='/member'>メンバー制度</a></li>
+         <li><a href='/access'>アクセス</a></li>
+         <li><a href='/faq'>よくあるご質問</a></li>
+         <li><a href='/contact'>お問合せ</a></li>
+       </ul>
+    </nav>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href='/service'>料金表</a></li>
+        <li><a href='/facilities'>施設案内</a></li>
+        <li><a href='/golf-coach'>コーチ・プロ紹介</a></li>
+        <li><a href='/school-lesson'>スクール・レッスン日程</a></li>
+        <li><a href='/member'>メンバー制度</a></li>
+        <li><a href='/access'>アクセス</a></li>
+        <li><a href='/faq'>よくあるご質問</a></li>
+        <li class="contact-btn"><a href='/contact'>お問合せ</a></li>
+      </ul>
+     </nav>
+  </header>
+
+    <div class="golf-bg">
+        <div class="header">
+            <div class="container">
+                <h1>お問い合わせ</h1>
+            </div>
+        </div>
+        
+        <div class="container">
+         <div class="main-content">
+           <div class="contact-form form-group">
+      　     <h2>お問い合わせフォーム</h2>
+             <p>お気軽にお問い合わせください。3営業日以内にご返信いたします。</p>
+           </div>
     
-    <div class="form-container">
-      <form id="contactForm">
+      <div class="form-container">
+       <form id="contactForm">
         <div class="form-group">
           <label for="name">お名前 <span class="required">*</span></label>
           <input type="text" id="name" name="name" class="form-control" required>
@@ -45,8 +92,7 @@
           送信する
         </button>
       </form>
-      
-      <div class="loading" id="loading">
+         <div class="loading" id="loading">
         <div class="spinner"></div>
         <span>送信中です。しばらくお待ちください...</span>
       </div>
@@ -56,5 +102,73 @@
   </div>
 
   <script src="js/script.js"></script>
+
+ </div>
+                
+        <div class="contact-info">
+         <h2>施設情報</h2>
+             <div class="facility-name">グリーンピア近江八幡ゴルフ練習場</div>
+                    
+              <div class="info-item">
+                   <strong>住所:</strong>
+                    〒523-0023<br>
+                   滋賀県近江八幡市倉橋部町146‐5
+                </div>
+                    
+               <div class="info-item">
+                 <strong>TEL:</strong>
+                     <a href="tel:0748-37-2010" style="color: #2c5530; text-decoration: none;">0748-37-2010</a>
+               </div>
+                    
+               <div class="info-item">
+                   <strong>FAX:</strong>
+                   0748-37-8115
+               </div>
+                    
+               <div class="notice">
+                  <h3>ご注意事項</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>下記フォームに必要事項をご記入の上、「送信する」ボタンを押してください。</li>
+                        <li>追ってご連絡させて頂きます。</li>
+                        <li>お問い合わせ内容により、返信できないこともございます。</li>
+                        <li>ご了承ください。</li>
+                     </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+            <div class="footer-links">
+            <a href='/'>ホーム</a>
+            <a href='/service'>料金表</a>
+            <a href='/facilities'>施設案内</a>
+            <a href='/golf-coach'>コーチ・プロ紹介</a>
+            <a href='/school-lesson'>スクール・レッスン日程</a>
+            <a href='/member'>メンバー制度</a>
+            <a href='/access'>アクセス</a>
+            <a href='/faq'>よくあるご質問</a>
+        </div>
+       <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+   </footer>
+
+    <script src="script.js"></script>
+        <!--menu-->
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.right = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.getElementById('sideMenu').style.right = '-100%';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
