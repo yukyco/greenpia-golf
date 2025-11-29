@@ -52,16 +52,20 @@
      </nav>
   </header>
 
-    <div class="golf-bg">
-      <div class="page-header">
+   <div class="golf-bg">
+
+  <div class="page-header">
+    <div class="container">
+      <h1>お問い合わせ</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-content">
+
+      <!-- 左：フォーム -->
+      <div class="contact-form form-group">
        <div class="container">
-        <h1>お問い合わせ</h1>
-       </div>
-      </div>
-     
-        <div class="container">
-         <div class="main-content">
-           <div class="contact-form form-group">
       　     <h2>お問い合わせフォーム</h2>
              <p>お気軽にお問い合わせください。3営業日以内にご返信いたします。</p>
                <!--<div class="form-container">-->
@@ -86,18 +90,11 @@
                     送信する
                   </button>
                 </form>
-              </div>
-            </div>
           </div>
-           
-          <div class="loading" id="loading">
-           <div class="spinner"></div>
-           <span>送信中です。しばらくお待ちください...</span>
-          </div>
-         
-          <div class="message" id="message"></div>
-         </div>
+      </div>
 
+      <!-- 右：施設情報（同じ main-content 内に） -->
+      <div class="contact-info">
         <div class="contact-info">
          <h2>施設情報</h2>
              <div class="facility-name">グリーンピア近江八幡ゴルフ練習場</div>
@@ -129,6 +126,22 @@
                 </div>
               </div>
             </div>
+      </div>
+
+    </div> <!-- /main-content -->
+  </div> <!-- /container -->
+
+</div> <!-- /golf-bg -->
+         
+          <div class="loading" id="loading">
+           <div class="spinner"></div>
+           <span>送信中です。しばらくお待ちください...</span>
+          </div>
+         
+          <div class="message" id="message"></div>
+         </div>
+
+       
 
    
    <script src="js/script.js"></script>
