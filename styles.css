@@ -19,17 +19,17 @@
         }
 
         /* Header */
-        /* 全体のヘッダー背景色と中央寄せ */
+        /* 全体のヘッダー */
         .header {
             background-color: #006634;
             color: #fff;
             padding: 20px 0;
-            justify-content: center; /* 👈 全体を中央に */
+            justify-content: center; 
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* ロゴ画像の中央表示 */
+        /* ロゴ画像 */
         .logo-wrapper {
             text-align: center;
            }
@@ -49,7 +49,7 @@
 
             @media screen and (max-width: 768px) {
             .logo-img {
-                height: 42px; /* スマホ時は少し小さく */
+                height: 42px;
                 }
             }
 
@@ -65,8 +65,8 @@
            @media screen and (max-width: 768px) {
             .logo-wrapper {
                display: flex;
-               justify-content: flex-start; /* 左寄せ */
-               padding-left: 1em; /* 任意：少し余白 */
+               justify-content: flex-start; 
+               padding-left: 1em; 
              }
 
             .logo-img {
@@ -74,7 +74,7 @@
               }
              }
 
-        /* メニューリストの中央揃え */
+        /* メニューリスト */
             .nav-list {
                 list-style: none;
                 padding: 0;
@@ -92,7 +92,7 @@
                 padding: 0.5em 0.8em;
                 }
 
-         /* お問い合せだけボタン風に */
+         /* お問い合せボタン */
             .contact-btn {
                 background: linear-gradient(135deg, #FF8630, #fbbf24);
                 padding: 2px 8px;
@@ -133,11 +133,18 @@
         h1 {
             color: white;
             text-align: center;
-            font-size: 2.8rem;
-            font-weight: 700;
             position: relative;
             z-index: 1;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
 
         .subtitle {
@@ -747,4 +754,5 @@
             .footer-links a:hover {
             text-decoration: underline;
             }
+
 
