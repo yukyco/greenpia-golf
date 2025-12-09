@@ -26,9 +26,8 @@
                 color: #92400e;
                 }
             
-        /* Header PR */
+        /* Header PR 12/9変更*/
         header {
-            background: linear-gradient(135deg, #2d5a3d, #4a7c59);
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -312,4 +311,5 @@
         .facility-card:nth-child(4) { animation-delay: 0.4s; }
         .facility-card:nth-child(5) { animation-delay: 0.5s; }
         .facility-card:nth-child(6) { animation-delay: 0.6s; }
+
 
