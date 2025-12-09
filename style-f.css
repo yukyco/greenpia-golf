@@ -18,7 +18,6 @@
             padding: 0 20px;
         }
         
- /* お問い合せだけボタン風に */
             .contact-btn {
                 background: linear-gradient(135deg, #FF8630, #fbbf24);
                 padding: 2px 8px;
@@ -26,40 +25,25 @@
                 font-weight: bold;
                 color: #92400e;
                 }
-
             
-        /* Header 
+        /* Header PR */
         header {
             background: linear-gradient(135deg, #2d5a3d, #4a7c59);
             color: white;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
+        }　
 
-        Navigation 
-        nav {
-            background: rgba(45, 90, 61, 0.9);
-            padding: 15px 0;
-            text-align: center;
-            backdrop-filter: blur(10px);
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            display: inline-block;
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
-        
-        nav a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }*/
         
         .logo {
             font-size: 2.5em;
@@ -328,3 +312,4 @@
         .facility-card:nth-child(4) { animation-delay: 0.4s; }
         .facility-card:nth-child(5) { animation-delay: 0.5s; }
         .facility-card:nth-child(6) { animation-delay: 0.6s; }
+
