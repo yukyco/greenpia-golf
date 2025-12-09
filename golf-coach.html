@@ -423,8 +423,9 @@
             document.getElementById('overlay').style.display = 'none';
         }
     </script>
-        <script>           
-            // アニメーション効果
+    <script>
+        // アニメーション効果の追加
+        document.addEventListener('DOMContentLoaded', function() {
             const elements = document.querySelectorAll('.animate-fade-in');
             
             const observer = new IntersectionObserver((entries) => {
