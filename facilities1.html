@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施設案内 - グリーンピア近江八幡ゴルフ練習場</title>  
+    <link rel="stylesheet" href="style-f.css">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="グリーンピア近江八幡ゴルフ練習場" />
+    <meta name="format-detection" content="グリーンピア近江八幡ゴルフ練習場">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
+</head>
+
+  <body>
+    <header class="header">
+        <div class="logo-wrapper">
+            <a href='/'><img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img"></a>
+        </div>
+    
+     <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+      <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
+    </div>
+
+    <!-- サイドメニュー -->
+    <nav id="sideMenu" class="side-menu">
+       <img id="closeIcon" src="close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
+        <ul>
+         <li><a href='/service'>料金表</a></li>
+         <li><a href='/facilities'>施設案内</a></li>
+         <li><a href='/golf-coach'>コーチ・プロ紹介</a></li>
+         <li><a href='/school-lesson'>スクール・レッスン日程</a></li>
+         <li><a href='/member'>メンバー制度</a></li>
+         <li><a href='/access'>アクセス</a></li>
+         <li><a href='/faq'>よくあるご質問</a></li>
+         <li><a href='/contact'>お問合せ</a></li>
+       </ul>
+    </nav>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href='/service'>料金表</a></li>
+        <li><a href='/facilities'>施設案内</a></li>
+        <li><a href='/golf-coach'>コーチ・プロ紹介</a></li>
+        <li><a href='/school-lesson'>スクール・レッスン日程</a></li>
+        <li><a href='/member'>メンバー制度</a></li>
+        <li><a href='/access'>アクセス</a></li>
+        <li><a href='/faq'>よくあるご質問</a></li>
+        <li class="contact-btn"><a href='/contact'>お問合せ</a></li>
+      </ul>
+     </nav>
+  </header>
+ 
+    <main>
+       <div class="container">
+        <header class="header animate-fade-in">
+            <h1>施設のご案内</h1>
+            <p class="catchphrase">爽快なスイングをご堪能下さいねっ!</p>
+        </div>
+        
+         <!-- <div class="container">
+           Hero Section 
+            <section class="hero-section">
+                <h1 class="hero-title">施設のご案内</h1>
+                <div class="catchphrase">爽快なスイングをご堪能下さいねっ!</div>
+            </section> -->
+    
+
+            <!-- Facilities Grid -->
+            <section class="facilities-grid">
+                <!-- ドライビングレンジ -->
+                <div class="facility-card driving-range">
+                    <div class="facility-icon">🏌️</div>
+                    <h3 class="facility-title">ドライビングレンジ</h3>
+                    <p class="facility-description">1階・2階の2フロア構成で、様々な角度からの練習が可能です。</p>
+                    <ul class="facility-features">
+                       <img src="images/slide5.jpg" alt="打席エリア" width="400" class="list-image"> 
+                        <li>1階打席 - 自然な打球角度</li>
+                        <li>2階打席 - 高い位置からの練習</li>
+                        <li>フロアマット使用</li>
+                        <li>時間帯により料金が異なります</li>
+                    </ul>
+                    
+                </div>
+                
+                <!-- 室内パター練習場 -->
+                <div class="facility-card putting-practice">
+                    <div class="facility-icon">⛳</div>
+                    <h3 class="facility-title">室内パター練習場</h3>
+                    <p class="facility-description">天候に左右されない室内でのパッティング練習が可能です。</p>
+                    <img src="images/slide6.jpg" alt="室内パター練習場" width="400" class="list-image">
+                    <ul class="facility-features">
+                        <li>室内環境で快適練習</li>
+                        <li>様々な距離での練習</li>
+                        <li>天候に関係なく利用可能</li>
+                        <li>初心者から上級者まで対応</li>
+                    </ul>
+                </div>
+                
+                <!-- バンカー練習場 -->
+                <div class="facility-card bunker-practice">
+                    <div class="facility-icon">🏖️</div>
+                    <h3 class="facility-title">バンカー練習場</h3>
+                    <p class="facility-description">実際のコースと同じ砂でバンカーショットの練習ができます。</p>
+                    <img src="images/photo1-694x1024.jpg" alt="クロスバンカー打席" width="200" class="list-image">
+                    <ul class="facility-features">
+                        <li>本格的なバンカー練習</li>
+                        <li>クロスバンカー打席も完備</li>
+                        <li>実戦的な練習環境</li>
+                        <li>利用料金：バンカー￥300、クロスバンカー￥200</li>
+                    </ul>
+                </div>
+                
+                <!-- アプローチ練習場 -->
+                <div class="facility-card">
+                    <div class="facility-icon">🎯</div>
+                    <h3 class="facility-title">アプローチ練習場</h3>
+                    <p class="facility-description">短い距離のアプローチショット練習に最適な環境です。</p>
+                    <ul class="facility-features">
+                        <li>距離感を養う練習</li>
+                        <li>様々なライからの練習</li>
+                        <li>ピンまでの距離表示</li>
+                        <li>利用料金：￥300</li>
+                    </ul>
+                </div>
+                
+                <!-- アメニティ -->
+                <div class="facility-card amenities">
+                    <div class="facility-icon">🛍️</div>
+                    <h3 class="facility-title">アメニティ・サービス</h3>
+                    <p class="facility-description">練習に必要な設備やサービスを充実させています。<br>
+                    広々とした受付フロアには、料金表やレッスン情報を詳しく掲示。手前にはカラーボールの販売コーナーもあり、<br>
+                        練習に必要なものを一度に揃えていただけます。明るく清潔な空間で、スタッフが皆様のご来場をお待ちしています。</p>
+                    <img src="images/marker-768x576.jpg" alt="手作りマーカー販売" width="400" class="list-image"><br>
+                     <img src="images/golfball.jpg" alt="ゴルフボールセール販売" width="400" class="list-image"><br>
+                    <ul class="facility-features">
+                        <li>手作りグッズ販売</li>
+                        <li>喫煙ブース完備</li>
+                        <li>自動販売機設置</li>
+                        <li>駐車場完備</li>
+                    </ul>
+                </div>
+                
+                <!-- レッスン・指導 -->
+                <div class="facility-card">
+                    <div class="facility-icon">👨‍🏫</div>
+                    <h3 class="facility-title">レッスン・指導</h3>
+                    <p class="facility-description">経験豊富なプロによる質の高いレッスンをご提供します。</p>
+                    <ul class="facility-features">
+                        <li>PGAプロによる本格指導</li>
+                        <li>初心者向け無料レッスン</li>
+                        <li>ワンポイントレッスン（10分￥1,200）</li>
+                        <li>個人・グループレッスン対応</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+     <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+            <div class="footer-links">
+            <a href='/'>ホーム</a>
+            <a href='/service'>料金表</a></li>
+            <a href='/facilities'>施設案内</a></li>
+            <a href='/golf-coach'>コーチ・プロ紹介</a></li>
+            <a href='/school-lesson'>スクール・レッスン日程</a></li>
+            <a href='/member'>メンバー制度</a></li>
+            <a href='/access'>アクセス</a></li>
+            <a href='/faq'>よくあるご質問</a></li>
+            </div>
+           <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+        </div>
+     </footer>
+
+    <script src="script.js"></script>
+     
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.right = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.getElementById('sideMenu').style.right = '-100%';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+
+    <script>
+        // FAQ アコーディオン機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // 他のアイテムを閉じる
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // 現在のアイテムをトグル
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // アニメーション効果
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s ease-in-out';
+                    }
+                });
+            });
+            
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
