@@ -20,7 +20,8 @@
         
         .header {
             text-align: center;
-            margin-bottom: 50px;
+       　   margin-top: 10px;
+            margin-bottom: 10px;
             padding: 50px 0;
             color: white;
             box-shadow: 0 25px 50px rgba(45, 90, 39, 0.3);
@@ -317,3 +318,4 @@
                 padding: 10px;
             }
         }
+
