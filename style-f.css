@@ -17,28 +17,32 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-            .contact-btn {
-                background: linear-gradient(135deg, #FF8630, #fbbf24);
-                padding: 2px 8px;
-                border-radius: 5px;
-                font-weight: bold;
-                color: #92400e;
-                }
+
+        .contact-btn {
+           background: linear-gradient(135deg, #FF8630, #fbbf24);
+           padding: 2px 8px;
+           border-radius: 5px;
+           font-weight: bold;
+           color: #92400e;
+        }
             
         /* Header PR 12/9変更*/
-        header {
-            color: white;
-            padding: 20px 0;
+        .header {
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }　
-
+            margin-bottom: 10px;
+            padding: 40px 0;
+            
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
         .header h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
+        
         .header p {
             font-size: 1.2em;
             opacity: 0.9;
@@ -311,5 +315,6 @@
         .facility-card:nth-child(4) { animation-delay: 0.4s; }
         .facility-card:nth-child(5) { animation-delay: 0.5s; }
         .facility-card:nth-child(6) { animation-delay: 0.6s; }
+
 
 
