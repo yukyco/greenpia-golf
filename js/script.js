@@ -81,17 +81,18 @@ class ContactForm {
     }
   }
   
+　// 修正 : 送信しました　0522 
   async sendToGAS(formData) {
     try {
-      await fetch(this.GAS_WEB_APP_URL, {
+      const response = await fetch(this.GAS_WEB_APP_URL, {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      return { success: true };
+      const result = await response.json();
+      return result;
     } catch (error) {
-      return await this.sendWithJSONP(formData);
+      return { success: false };
     }
   }
   
