@@ -81,8 +81,8 @@ class ContactForm {
     }
   }
   
-　// 修正 : 送信しました　0522 
-  async sendToGAS(formData) {
+　// 修正 : 送信しました　0525 
+   async sendToGAS(formData) {
     try {
       const response = await fetch(this.GAS_WEB_APP_URL, {
         method: 'POST',
