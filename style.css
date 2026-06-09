@@ -3,7 +3,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+    
+       html {
+           width: 100%;
+           overflow-x: hidden;
+       }
+
         body {
             font-family: 'Rounded Mplus 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
             line-height: 1.6;
