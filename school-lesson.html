@@ -4,478 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スクール・レッスン日程 - グリーンピア近江八幡ゴルフ練習場</title>
-    <link rel="stylesheet" href="style-s.css">
-    <link rel="stylesheet" href="style.css">
     <meta name="description" content="滋賀県近江八幡市のゴルフ練習場、グリーンピア近江八幡ゴルフ練習場の公式サイトです。営業時間・料金・アクセス情報をご案内しています。">
-    <meta name="format-detection" content="グリーンピア近江八幡ゴルフ練習場">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
-   <div class="logo-wrapper">
-    <a href="index.html"><img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img"></a>
-   </div>
 
-      <!-- ハンバーガーメニュー -->
+<!-- 浮遊アイコン -->
+<div class="floating-elements">
+    <div class="floating-element">⛳</div>
+    <div class="floating-element">🏌️</div>
+    <div class="floating-element">🏆</div>
+    <div class="floating-element">🎯</div>
+    <div class="floating-element">🌿</div>
+</div>
+
+<header class="header">
+    <div class="logo-wrapper">
+        <a href="index.html"><img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img"></a>
+    </div>
+
+    <!-- ハンバーガーメニュー（スマホのみ） -->
     <div class="hamburger-menu">
-      <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
+        <img id="menuIcon" src="menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
     </div>
 
     <!-- サイドメニュー -->
     <nav id="sideMenu" class="side-menu">
-       <img id="closeIcon" src="close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
+        <img id="closeIcon" src="close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
         <ul>
-         <li><a href="service.html">料金表</a></li>
-         <li><a href="facilities.html">施設案内</a></li>
-         <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
-         <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
-         <li><a href="member.html">メンバー制度</a></li>
-         <li><a href="access.html">アクセス</a></li>
-         <li><a href="faq.html">よくあるご質問</a></li>
-         <li><a href="contact.html">お問合せ</a></li>
-       </ul>
+            <li><a href="service.html">料金表</a></li>
+            <li><a href="facilities.html">施設案内</a></li>
+            <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+            <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+            <li><a href="member.html">メンバー制度</a></li>
+            <li><a href="access.html">アクセス</a></li>
+            <li><a href="faq.html">よくあるご質問</a></li>
+            <li><a href="contact.html">お問合せ</a></li>
+        </ul>
     </nav>
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
+    <!-- PCナビ -->
     <nav class="nav">
-      <ul class="nav-list">
-        <li><a href="service.html">料金表</a></li>
-        <li><a href="facilities.html">施設案内</a></li>
-        <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
-        <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
-        <li><a href="member.html">メンバー制度</a></li>
-        <li><a href="access.html">アクセス</a></li>
-        <li><a href="faq.html">よくあるご質問</a></li>
-        <li class="contact-btn"><a href="contact.html">お問合せ</a></li>
-      </ul>
-     </nav>
-  </header>
+        <ul class="nav-list">
+            <li><a href="service.html">料金表</a></li>
+            <li><a href="facilities.html">施設案内</a></li>
+            <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+            <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+            <li><a href="member.html">メンバー制度</a></li>
+            <li><a href="access.html">アクセス</a></li>
+            <li><a href="faq.html">よくあるご質問</a></li>
+            <li class="contact-btn"><a href="contact.html">お問合せ</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="floating-elements">
-        <div class="floating-element">⛳</div>
-        <div class="floating-element">🏌️</div>
-        <div class="floating-element">🏆</div>
-        <div class="floating-element">🎯</div>
-        <div class="floating-element">🌿</div>
+<div class="container">
+
+    <!-- ページタイトル -->
+    <div class="page-title-block">
+        <h1>スクール・レッスン日程</h1>
+        <p>グリーンピア近江八幡ゴルフ練習場で上達しよう！</p>
     </div>
-    
-    <div class="container">
-        <div class="header">
-            <h1>スクール・レッスン日程</h1>
-            <p>グリーンピア近江八幡ゴルフ練習場で上達しよう！</p>
-        </div>
-        
-        <div class="marquee">5月24日　⛳レッスン情報を更新しました⛳</div>
-        
-        <div class="current-month">
-            <h2>📅 今月のスケジュール情報</h2>
-            <div class="month-info">
-                 <div class="month-item">
-                    <h3>吉井スクールのレッスン</h3>
-                    <h4>3月のお休み</h4>
-                    <p>3月20日（金）</p>
-                    <h4>4月のお休み</h4>
-                    <p>4月10日（金）</p>
-                </div>
-                <div class="month-item">
-                    <h3>信田プロのレッスン</h3>
-                    <h4>6月のお休み</h4>
-                    <p>8日（月）・11日（木）・13日（土）・21日（日）</p>
-                </div>
-                <div class="month-item">
-                    <h3>廣田プロのレッスン</h3>
-                     <p>5月のレッスン日：30日（土）</p>
-                     <p>6月のレッスン日：13日（土）・27日（土）</p>
-                </div>
-               <div class="month-item">
-                    <h3>藤田プロのレッスン</h3>
-                  　<p>常時レッスンのご予約を承ります。<br>
-                   ご希望の日程を何日かお伝え頂き、追って可能日をご連絡させて頂き、受講して頂きます。</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="contact-info">
-            <h2>レッスンのご予約・お問い合わせ</h2>
-            <p>レッスンのご予約はお電話で承っております。お気軽にお問い合わせください。</p>
-            <a href="tel:0748-37-2010" class="phone">📞 0748-37-2010</a>
-        </div>
-        
-        <div class="schedule-grid">
-            <!-- 吉井 泰恵プロ -->
-            <div class="schedule-card">
-                <div class="coach-name pro">吉井 泰恵プロ</div>
-                <div class="coach-title">日本女子プロゴルフ協会（LPGA）ティーチングプロA級</div>
-                
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th colspan="2">金曜スクール（完全予約制）</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>一般（金曜日）</strong></td>
-                            <td><strong>ジュニア</strong></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                ①13:00〜14:30（90分）<br>
-                                ②15:00〜16:30（90分）<br>
-                                ③18:30〜20:00（90分）
-                            </td>
-                            <td>
-                                ①初心者コース17:00〜（30分）<br>
-                                ②経験者コース17:30〜（30分）
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>月4回コース <span class="price">8,500円</span></td>
-                            <td>30分 <span class="price">1,000円</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="schedule-notes">
-                    <h4>📝 注意事項</h4>
-                    <p>• ４枚チケット（但し１枚だけ３ヶ月過ぎても利用可能/ボール代は含みません）<br>
-                    • 有効期間：３ヶ月<br>
-                    • 友達・家族でシェアOK</p>
-                </div>
+    <div class="marquee">5月24日　⛳レッスン情報を更新しました⛳</div>
+
+    <!-- 今月のスケジュール -->
+    <div class="current-month">
+        <h2>📅 今月のスケジュール情報</h2>
+        <div class="month-info">
+            <div class="month-item">
+                <h3>吉井スクールのレッスン</h3>
+                <h4>3月のお休み</h4>
+                <p>3月20日（金）</p>
+                <h4>4月のお休み</h4>
+                <p>4月10日（金）</p>
             </div>
-            
-            <!-- 廣田 恭司プロ -->
-            <div class="schedule-card">
-                <div class="coach-name pro">廣田 恭司プロ</div>
-                <div class="coach-title">日本プロゴルフ協会（PGA）トーナメントプレーヤー</div>
-                
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th colspan="2">土曜・日曜スクール</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>レッスン内容</strong></td>
-                            <td><strong>料金</strong></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                土曜 or 日曜マンツーマンレッスン<br>
-                                時間：10:00〜15:00<br>
-                                2時間打ち放題の内、25分間レッスン
-                            </td>
-                            <td>
-                                男性：<span class="price">3,600円</span><br>
-                                女性：<span class="price">3,600円</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="schedule-notes">
-                    <h4>🏆 実績</h4>
-                    <p>日本オープンゴルフ選手権競技2018に出場！</p>
-                    <h4>📅 開催日</h4>
-                    <p> 7月19日（土）・8月2日（土）・8月23日（土）<br>
-                    ※プロの試合の都合で変更になる場合があります</p>
-                </div>
+            <div class="month-item">
+                <h3>信田プロのレッスン</h3>
+                <h4>6月のお休み</h4>
+                <p>8日（月）・11日（木）・13日（土）・21日（日）</p>
             </div>
-            
-            <!-- 信田 博良プロ -->
-            <div class="schedule-card">
-                <div class="coach-name pro">信田 博良プロ</div>
-                <div class="coach-title">USGTF（レベルⅢ）ティーチングプロ</div>
-                
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>スクール</th>
-                            <th>個人レッスン</th>
-                            <th>初心者スクール</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <strong>月・木・土・日</strong><br>
-                                ①10:30〜12:00<br>
-                                ②14:00〜15:30<br>
-                                ③16:00〜17:30（土日）
-                            </td>
-                            <td>
-                                ①16:00〜18:00（月木）<br>
-                                ②18:00〜19:00（土日）
-                            </td>
-                            <td>
-                                <strong>月・土・日</strong><br>
-                                12:30〜13:30<br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                1回：<span class="price">4,500円</span><br>
-                                2回：<span class="price">8,500円</span><br>
-                                3回：<span class="price">12,000円</span><br>
-                                4回：<span class="price">15,000円</span>
-                            </td>
-                            <td>
-                                20分：<span class="price">2,000円</span><br>
-                                30分：<span class="price">3,000円</span><br>
-                                40分：<span class="price">4,000円</span><br>
-                                60分：<span class="price">5,000円</span>
-                            </td>
-                            <td>
-                                <span class="price">無料</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="schedule-notes">
-                    <h4>📝 注意事項</h4>
-                    <p>• スクールはボール代込み、個人レッスンはボール代別<br>
-                    • 日祝は4名様限定（要予約）<br>
-                    • 有効期限：1ヶ月</p>
-                </div>
+            <div class="month-item">
+                <h3>廣田プロのレッスン</h3>
+                <p>5月のレッスン日：30日（土）</p>
+                <p>6月のレッスン日：13日（土）・27日（土）</p>
             </div>
-            
-            <!-- 藤田 翼プロ -->
-            <div class="schedule-card">
-                <div class="coach-name pro">藤田 翼プロ</div>
-                <div class="coach-title">日本プロゴルフ協会（PGA）トーナメントプレーヤー<br>JGTO ツアープレーヤー</div>
-                
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th colspan="2">ご希望により調整させていただきます</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>時間</strong></td>
-                            <td><strong>料金</strong></td>
-                        </tr>
-                        <tr>
-                            <td>1時間</td>
-                            <td>1回 <span class="price">3,000円</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="schedule-notes">
-                    <h4>📝 注意事項</h4>
-                    <p>• ボール代は含みません<br>
-                    • 事前予約制<br>
-                    • 毎週火曜日開催予定<br>
-                    • プロの試合の都合でお休みになる場合があります</p>
-                </div>
-            </div>
-            
-            <!-- 金子 徳馬プロ -->
-            <div class="schedule-card">
-                <div class="coach-name pro">金子 徳馬プロ</div>
-                <div class="coach-title">日本プロゴルフ協会（PGA）トーナメントプレーヤー</div>
-                
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th colspan="3">金曜スクール</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>時間</strong></td>
-                            <td><strong>人数</strong></td>
-                            <td><strong>料金</strong></td>
-                        </tr>
-                        <tr>
-                            <td>17:30〜18:30</td>
-                            <td>4名</td>
-                            <td><span class="price">3,000円</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="schedule-notes">
-                    <h4>🏌️ 特徴</h4>
-                    <p>• 打球練習・アプローチ・バンカーレッスンあり<br>
-                    • ボール代は含みません<br>
-                    • フロントまでお申し込みください</p>
-                </div>
-            </div>
-            
-            <!-- 中西 永知プロ -->
-            <div class="schedule-card">
-                <div class="coach-name">中西 永知プロ</div>
-                <div class="coach-title">日本プロゴルフ協会（PGA）ティーチングプロ</div>
-                
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th colspan="3">月・土・日レッスン</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>レッスン名</strong></td>
-                            <td><strong>時間</strong></td>
-                            <td><strong>料金</strong></td>
-                        </tr>
-                        <tr>
-                            <td>ワンポイントレッスン</td>
-                            <td>10分</td>
-                            <td><span class="price">1,200円</span></td>
-                        </tr>
-                        <tr>
-                            <td>トラックマン4（データ）</td>
-                            <td>20分</td>
-                            <td><span class="price">2,400円〜</span></td>
-                        </tr>
-                        <tr>
-                            <td>マンツーマンレッスン</td>
-                            <td>60分</td>
-                            <td><span class="price">5,000円〜</span></td>
-                        </tr>
-                        <tr>
-                            <td>ペアレッスン（2名）</td>
-                            <td>60分</td>
-                            <td><span class="price">7,000円〜</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="schedule-notes">
-                    <h4>🎯 経歴</h4>
-                    <p>10歳からゴルフを始め、中学・高校・大学では競技ゴルフを通じて、蝉川プロ、平田プロ、中島プロたちと凌ぎを削る</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="facility-info">
-            <h2>🏌️ 施設情報</h2>
-            <div class="facility-grid">
-                <div class="facility-item">
-                    <h3>📍 所在地</h3>
-                    <p>滋賀県近江八幡市倉橋部町146-5</p>
-                </div>
-                <div class="facility-item">
-                    <h3>🕐 営業時間</h3>
-                    <p>平日・土日祝：6:00〜23:00<br>
-                    （1-3月は22:30まで）</p>
-                </div>
-                <div class="facility-item">
-                    <h3>🏌️ 打席距離</h3>
-                    <p>300ヤード</p>
-                </div>
-                <div class="facility-item">
-                    <h3>🎯 打ち放題</h3>
-                    <p>平日：1,980円〜<br>
-                    土日祝：2,200円</p>
-                </div>
+            <div class="month-item">
+                <h3>藤田プロのレッスン</h3>
+                <p>常時レッスンのご予約を承ります。<br>
+                ご希望の日程を何日かお伝え頂き、追って可能日をご連絡させて頂き、受講して頂きます。</p>
             </div>
         </div>
     </div>
-    
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
-            <div class="footer-links">
-             <a href="index.html">ホーム</a>
-             <a href="service.html">料金表</a></li>
-             <a href="facilities.html">施設案内</a></li>
-             <a href="golf-coach.html">コーチ・プロ紹介</a></li>
-             <a href="school-lesson.html">スクール・レッスン日程</a></li>
-             <a href="member.html">メンバー制度</a></li>
-             <a href="access.html">アクセス</a></li>
-             <a href="faq.html">よくあるご質問</a></li>
-             <a href="contact.html">お問合せ</a></li>
+    <!-- 予約・お問い合わせ -->
+    <div class="contact-info">
+        <h2>レッスンのご予約・お問い合わせ</h2>
+        <p>レッスンのご予約はお電話で承っております。お気軽にお問い合わせください。</p>
+        <a href="tel:0748-37-2010" class="phone">📞 0748-37-2010</a>
+    </div>
+
+    <!-- スケジュールグリッド -->
+    <div class="schedule-grid">
+
+        <!-- 吉井 泰恵プロ -->
+        <div class="schedule-card">
+            <div class="coach-name">吉井 泰恵プロ</div>
+            <div class="coach-title">日本女子プロゴルフ協会（LPGA）ティーチングプロA級</div>
+            <table class="schedule-table">
+                <thead>
+                    <tr><th colspan="2">金曜スクール（完全予約制）</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>一般（金曜日）</strong></td>
+                        <td><strong>ジュニア</strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ①13:00〜14:30（90分）<br>
+                            ②15:00〜16:30（90分）<br>
+                            ③18:30〜20:00（90分）
+                        </td>
+                        <td>
+                            ①初心者コース17:00〜（30分）<br>
+                            ②経験者コース17:30〜（30分）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>月4回コース <span class="price">8,500円</span></td>
+                        <td>30分 <span class="price">1,000円</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="schedule-notes">
+                <h4>📝 注意事項</h4>
+                <p>• ４枚チケット（但し１枚だけ３ヶ月過ぎても利用可能/ボール代は含みません）<br>
+                • 有効期間：３ヶ月<br>
+                • 友達・家族でシェアOK</p>
             </div>
-           <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
         </div>
-   </footer>
 
-   <script>
-        // スクロールアニメーション
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.schedule-card');
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
-                observer.observe(card);
+        <!-- 廣田 恭司プロ -->
+        <div class="schedule-card">
+            <div class="coach-name">廣田 恭司プロ</div>
+            <div class="coach-title">日本プロゴルフ協会（PGA）トーナメントプレーヤー</div>
+            <table class="schedule-table">
+                <thead>
+                    <tr><th colspan="2">土曜・日曜スクール</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>レッスン内容</strong></td>
+                        <td><strong>料金</strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            土曜 or 日曜マンツーマンレッスン<br>
+                            時間：10:00〜15:00<br>
+                            2時間打ち放題の内、25分間レッスン
+                        </td>
+                        <td>
+                            男性：<span class="price">3,600円</span><br>
+                            女性：<span class="price">3,600円</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="schedule-notes">
+                <h4>🏆 実績</h4>
+                <p>日本オープンゴルフ選手権競技2018に出場！</p>
+                <h4>📅 開催日</h4>
+                <p>7月19日（土）・8月2日（土）・8月23日（土）<br>
+                ※プロの試合の都合で変更になる場合があります</p>
+            </div>
+        </div>
+
+        <!-- 信田 博良プロ -->
+        <div class="schedule-card">
+            <div class="coach-name">信田 博良プロ</div>
+            <div class="coach-title">USGTF（レベルⅢ）ティーチングプロ</div>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>スクール</th>
+                        <th>個人レッスン</th>
+                        <th>初心者スクール</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>月・木・土・日</strong><br>
+                            ①10:30〜12:00<br>
+                            ②14:00〜15:30<br>
+                            ③16:00〜17:30（土日）
+                        </td>
+                        <td>
+                            ①16:00〜18:00（月木）<br>
+                            ②18:00〜19:00（土日）
+                        </td>
+                        <td>
+                            <strong>月・土・日</strong><br>
+                            12:30〜13:30
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1回：<span class="price">4,500円</span><br>
+                            2回：<span class="price">8,500円</span><br>
+                            3回：<span class="price">12,000円</span><br>
+                            4回：<span class="price">15,000円</span>
+                        </td>
+                        <td>
+                            20分：<span class="price">2,000円</span><br>
+                            30分：<span class="price">3,000円</span><br>
+                            40分：<span class="price">4,000円</span><br>
+                            60分：<span class="price">5,000円</span>
+                        </td>
+                        <td><span class="price">無料</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="schedule-notes">
+                <h4>📝 注意事項</h4>
+                <p>• スクールはボール代込み、個人レッスンはボール代別<br>
+                • 日祝は4名様限定（要予約）<br>
+                • 有効期限：1ヶ月</p>
+            </div>
+        </div>
+
+        <!-- 藤田 翼プロ -->
+        <div class="schedule-card">
+            <div class="coach-name">藤田 翼プロ</div>
+            <div class="coach-title">日本プロゴルフ協会（PGA）トーナメントプレーヤー<br>JGTO ツアープレーヤー</div>
+            <table class="schedule-table">
+                <thead>
+                    <tr><th colspan="2">ご希望により調整させていただきます</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>時間</strong></td>
+                        <td><strong>料金</strong></td>
+                    </tr>
+                    <tr>
+                        <td>1時間</td>
+                        <td>1回 <span class="price">3,000円</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="schedule-notes">
+                <h4>📝 注意事項</h4>
+                <p>• ボール代は含みません<br>
+                • 事前予約制<br>
+                • 毎週火曜日開催予定<br>
+                • プロの試合の都合でお休みになる場合があります</p>
+            </div>
+        </div>
+
+        <!-- 金子 徳馬プロ -->
+        <div class="schedule-card">
+            <div class="coach-name">金子 徳馬プロ</div>
+            <div class="coach-title">日本プロゴルフ協会（PGA）トーナメントプレーヤー</div>
+            <table class="schedule-table">
+                <thead>
+                    <tr><th colspan="3">金曜スクール</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>時間</strong></td>
+                        <td><strong>人数</strong></td>
+                        <td><strong>料金</strong></td>
+                    </tr>
+                    <tr>
+                        <td>17:30〜18:30</td>
+                        <td>4名</td>
+                        <td><span class="price">3,000円</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="schedule-notes">
+                <h4>🏌️ 特徴</h4>
+                <p>• 打球練習・アプローチ・バンカーレッスンあり<br>
+                • ボール代は含みません<br>
+                • フロントまでお申し込みください</p>
+            </div>
+        </div>
+
+        <!-- 中西 永知プロ -->
+        <div class="schedule-card">
+            <div class="coach-name">中西 永知プロ</div>
+            <div class="coach-title">日本プロゴルフ協会（PGA）ティーチングプロ</div>
+            <table class="schedule-table">
+                <thead>
+                    <tr><th colspan="3">月・土・日レッスン</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>レッスン名</strong></td>
+                        <td><strong>時間</strong></td>
+                        <td><strong>料金</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ワンポイントレッスン</td>
+                        <td>10分</td>
+                        <td><span class="price">1,200円</span></td>
+                    </tr>
+                    <tr>
+                        <td>トラックマン4（データ）</td>
+                        <td>20分</td>
+                        <td><span class="price">2,400円〜</span></td>
+                    </tr>
+                    <tr>
+                        <td>マンツーマンレッスン</td>
+                        <td>60分</td>
+                        <td><span class="price">5,000円〜</span></td>
+                    </tr>
+                    <tr>
+                        <td>ペアレッスン（2名）</td>
+                        <td>60分</td>
+                        <td><span class="price">7,000円〜</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="schedule-notes">
+                <h4>🎯 経歴</h4>
+                <p>10歳からゴルフを始め、中学・高校・大学では競技ゴルフを通じて、蝉川プロ、平田プロ、中島プロたちと凌ぎを削る</p>
+            </div>
+        </div>
+
+    </div><!-- /schedule-grid -->
+
+    <!-- 施設情報 -->
+    <div class="facility-info">
+        <h2>🏌️ 施設情報</h2>
+        <div class="facility-grid">
+            <div class="facility-item">
+                <h3>📍 所在地</h3>
+                <p>滋賀県近江八幡市倉橋部町146-5</p>
+            </div>
+            <div class="facility-item">
+                <h3>🕐 営業時間</h3>
+                <p>平日・土日祝：6:00〜23:00<br>（1-3月は22:30まで）</p>
+            </div>
+            <div class="facility-item">
+                <h3>🏌️ 打席距離</h3>
+                <p>300ヤード</p>
+            </div>
+            <div class="facility-item">
+                <h3>🎯 打ち放題</h3>
+                <p>平日：1,980円〜<br>土日祝：2,200円</p>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+        <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="service.html">料金表</a>
+            <a href="facilities.html">施設案内</a>
+            <a href="golf-coach.html">コーチ・プロ紹介</a>
+            <a href="school-lesson.html">スクール・レッスン日程</a>
+            <a href="member.html">メンバー制度</a>
+            <a href="access.html">アクセス</a>
+            <a href="faq.html">よくあるご質問</a>
+            <a href="contact.html">お問合せ</a>
+        </div>
+        <p class="footer-text">© 2025 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    function openMenu() {
+        document.getElementById('sideMenu').style.right = '0';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closeMenu() {
+        document.getElementById('sideMenu').style.right = '-100%';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    // スクロールアニメーション
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.schedule-card');
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-            
-            // ホバーエフェクト
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-            
-            // 電話番号クリック時のアニメーション
-            const phoneLink = document.querySelector('.phone');
-            phoneLink.addEventListener('click', function() {
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // 電話番号クリックアニメーション
+        const phoneLink = document.querySelector('.phone');
+        if (phoneLink) {
+            phoneLink.addEventListener('click', function () {
                 this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
+                setTimeout(() => { this.style.transform = 'scale(1)'; }, 150);
             });
-        });
-    </script>
-    
-    <script src="script.js"></script>
-     
-    <script>
-        function openMenu() {
-            document.getElementById('sideMenu').style.right = '0';
-            document.getElementById('overlay').style.display = 'block';
         }
+    });
+</script>
 
-        function closeMenu() {
-            document.getElementById('sideMenu').style.right = '-100%';
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
-   　<script>
-            // アニメーション効果追加 12/9
-            const elements = document.querySelectorAll('.animate-fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeIn 0.8s ease-in-out';
-                    }
-                });
-            });
-            
-            elements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
 </body>
 </html>
