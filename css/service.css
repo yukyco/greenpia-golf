@@ -469,3 +469,26 @@
             opacity: 1;
             transform: translateY(0);
         }
+/* =============================================
+   styles.cssの上書き（白文字対策）
+   .section の緑背景・白文字をこのページでは無効化
+   ============================================= */
+.section {
+    background: none;
+    color: #006634;
+    box-shadow: none;
+    padding: 0;
+}
+
+.section h2 {
+    color: #2d5016;
+    border-bottom: none;
+}
+
+.time-table td {
+    color: #333;
+}
+
+.notice {
+    color: #0c5460;
+}
