@@ -1,0 +1,226 @@
+/* ===================================================
+   access.css
+   アクセスページ専用スタイル
+   =================================================== */
+
+/* style.cssのbody { color: white } を上書き */
+body {
+    color: #333;
+}
+
+/* ---------- ページタイトル ---------- */
+.container .header {
+    background: none;
+    color: white;
+    padding: 40px 0;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.container .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.container .header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ---------- ヒーロー画像 ---------- */
+.hero-image {
+    width: 100%;
+    max-width: 1200px;
+    height: 300px;
+    background: linear-gradient(rgba(45, 90, 45, 0.7), rgba(74, 140, 74, 0.7)), url('https://tipsandtips.xsrv.jp/greenpiagolf/wp-content/uploads/2023/05/bg_3.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin: 0 auto 40px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- アクセス情報セクション ---------- */
+.access-section {
+    background: white;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #4a8c4a;
+    border-radius: 15px;
+}
+
+/* 所在地・お問い合わせカード */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, #f0f8f0, #e8f5e8);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #4a8c4a;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(74, 140, 74, 0.2);
+}
+
+.contact-card h3 {
+    color: #2d5a2d;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card h3::before {
+    content: "📍";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #3d6a3d;
+}
+
+/* ---------- 交通手段 ---------- */
+.access-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.access-method {
+    background: linear-gradient(135deg, #f8fdf8, #f0f8f0);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #d4f4d4;
+    transition: all 0.3s ease;
+}
+
+.access-method:hover {
+    border-color: #4a8c4a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(74, 140, 74, 0.15);
+}
+
+.access-method h3 {
+    color: #2d5a2d;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.train-icon::before {
+    content: "🚆";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.car-icon::before {
+    content: "🚗";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.access-method p {
+    font-size: 1.1rem;
+    color: #3d6a3d;
+    margin-bottom: 10px;
+}
+
+/* ---------- 地図（Googleマップ） ---------- */
+.parking-info {
+    background: linear-gradient(135deg, #4a8c4a, #2d5a2d);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(45, 90, 45, 0.3);
+}
+
+.parking-info iframe {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* ---------- アニメーション ---------- */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width: 768px) {
+    .container .header h1 {
+        font-size: 2rem;
+    }
+
+    .access-section {
+        padding: 25px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .access-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .parking-info iframe {
+        height: 300px;
+    }
+}
