@@ -357,6 +357,10 @@ main {
     color: inherit;
 }
 
+.coach-card * {
+    text-decoration: none;
+}
+
 .coach-card:hover {
     transform: translateY(-5px);
 }
