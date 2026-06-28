@@ -363,6 +363,7 @@ main {
 
 .coach-card:hover {
     transform: translateY(-5px);
+    text-decoration: none;
 }
 
 .coach-image {
