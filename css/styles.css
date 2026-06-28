@@ -353,17 +353,13 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     display: block;
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
-}
-
-.coach-card * {
-    text-decoration: none;
 }
 
 .coach-card:hover {
     transform: translateY(-5px);
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .coach-image {
@@ -380,6 +376,7 @@ main {
     font-weight: bold;
     color: #fff;
     margin-bottom: 5px;
+    text-decoration: none !important;
 }
 
 .coach-button-wrapper {
@@ -554,7 +551,6 @@ main {
    施設案内ページ固有スタイル
    ============================================= */
 
-/* ページタイトル */
 .page-title-block {
     text-align: center;
     padding: 2.5rem 1rem 1.5rem;
@@ -566,7 +562,6 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* キャッチフレーズ（アニメーション付き） */
 .catchphrase {
     font-size: 1.5em;
     color: #d97706;
@@ -585,7 +580,6 @@ main {
     50%       { transform: scale(1.05); }
 }
 
-/* 施設グリッド */
 .facilities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -595,7 +589,6 @@ main {
     text-align: left;
 }
 
-/* 施設カード（共通） */
 .facility-card {
     background: white;
     color: #333;
@@ -623,7 +616,6 @@ main {
     border-color: #4a7c59;
 }
 
-/* カードごとの背景色 */
 .driving-range {
     background: linear-gradient(135deg, #ecfdf5, #d1fae5);
     border-color: #22c55e;
@@ -644,7 +636,6 @@ main {
     border-color: #ec4899;
 }
 
-/* アニメーション遅延 */
 .facility-card:nth-child(1) { animation-delay: 0.1s; }
 .facility-card:nth-child(2) { animation-delay: 0.2s; }
 .facility-card:nth-child(3) { animation-delay: 0.3s; }
@@ -729,7 +720,6 @@ main {
    スクール・レッスン日程ページ固有スタイル
    ============================================= */
 
-/* お問い合わせ・予約ボックス */
 .contact-info {
     background: linear-gradient(135deg, #ffffff, #f8fffe);
     border-radius: 20px;
@@ -770,7 +760,6 @@ main {
     box-shadow: 0 12px 30px rgba(45, 90, 39, 0.3);
 }
 
-/* 今月のスケジュール */
 .current-month {
     background: linear-gradient(135deg, #ffffff, #f8fffe);
     border-radius: 20px;
@@ -813,7 +802,6 @@ main {
     font-size: 0.95em;
 }
 
-/* スケジュールグリッド */
 .schedule-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -821,7 +809,6 @@ main {
     margin-bottom: 50px;
 }
 
-/* スケジュールカード */
 .schedule-card {
     background: linear-gradient(135deg, #ffffff, #f8fffe);
     border-radius: 25px;
@@ -865,7 +852,6 @@ main {
     font-size: 1.0em;
 }
 
-/* レッスンテーブル */
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
@@ -902,7 +888,6 @@ main {
     font-size: 1.1em;
 }
 
-/* 注意事項ボックス */
 .schedule-notes {
     background: linear-gradient(135deg, #fff3cd, #ffeaa7);
     border: 2px solid #ffd93d;
@@ -919,7 +904,6 @@ main {
     margin-bottom: 10px;
 }
 
-/* 施設情報 */
 .facility-info {
     background: linear-gradient(135deg, #ffffff, #f8fffe);
     border-radius: 20px;
@@ -953,7 +937,6 @@ main {
     box-shadow: 0 8px 20px rgba(45, 90, 39, 0.2);
 }
 
-/* 浮遊アイコン */
 .floating-elements {
     position: fixed;
     top: 0; left: 0;
@@ -980,7 +963,6 @@ main {
 .floating-element:nth-child(4) { bottom: 25%; right: 20%; animation-delay: 1s; }
 .floating-element:nth-child(5) { top: 60%; left: 50%; animation-delay: 3s; }
 
-/* レスポンシブ */
 @media (max-width: 768px) {
     .schedule-grid,
     .month-info,
