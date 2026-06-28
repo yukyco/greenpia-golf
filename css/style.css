@@ -278,10 +278,14 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            display: block;
+            text-decoration: none !important;
+            color: inherit;
         }
-        
+
         .coach-card:hover {
             transform: translateY(-5px);
+            text-decoration: none !important;
         }
         
         .coach-image {
@@ -298,6 +302,7 @@
             font-weight: bold;
             color: #fff;
             margin-bottom: 5px;
+            text-decoration: none !important;
         }
 
             /* SNSセクション全体 */
