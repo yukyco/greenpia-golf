@@ -346,26 +346,6 @@ main {
     }
 }
 
-.coach-card {
-    border-radius: 15px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.coach-card * {
-    text-decoration: none;
-}
-
-.coach-card:hover {
-    transform: translateY(-5px);
-    text-decoration: none;
-}
-
 .coach-image {
     width: 150px;
     height: 150px;
