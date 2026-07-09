@@ -349,7 +349,7 @@
             }
 
             .campaign-header {
-                background: linear-gradient(135deg, #fff6e9, #fdeee0);
+               /* background: linear-gradient(135deg, #fff6e9, #fdeee0); */
                 text-align: center;
                 padding: 30px 20px;
             }
