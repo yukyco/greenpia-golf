@@ -339,6 +339,133 @@
 
 
 
+            /* 夏限定キャンペーン */
+            .campaign-section {
+                max-width: 900px;
+                margin: 0 auto 30px;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            }
+
+            .campaign-header {
+                background: linear-gradient(135deg, #fff6e9, #fdeee0);
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .campaign-title {
+                color: #e6362e;
+                font-size: 2em;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .campaign-sub {
+                color: #33475b;
+                font-size: 1.1em;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .campaign-ticket-btn {
+                display: inline-block;
+                background: #e6362e;
+                color: #fff;
+                font-weight: bold;
+                font-size: 1.3em;
+                padding: 15px 30px;
+                border-radius: 10px;
+                margin-bottom: 25px;
+            }
+
+            .campaign-photo {
+                width: 100%;
+                max-width: 700px;
+                height: auto;
+                border-radius: 10px;
+                display: block;
+                margin: 0 auto;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            }
+
+            .campaign-period {
+                background: #2f6fb5;
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .campaign-period-label {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+
+            .campaign-period-date {
+                font-size: 1.7em;
+                font-weight: bold;
+                margin-bottom: 6px;
+            }
+
+            .campaign-period-time {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            .campaign-notes {
+                background: #fff;
+                color: #333;
+                list-style: none;
+                padding: 20px 25px;
+                margin: 0;
+            }
+
+            .campaign-notes li {
+                padding: 6px 0;
+                border-bottom: 1px dashed #ddd;
+            }
+
+            .campaign-notes li:last-child {
+                border-bottom: none;
+            }
+
+            .campaign-footer-banner {
+                background: #f7e017;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .campaign-footer-text {
+                color: #e6362e;
+                font-size: 1.3em;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            .campaign-footer-store {
+                color: #006634;
+                font-weight: bold;
+            }
+
+            @media (max-width: 768px) {
+                .campaign-title {
+                    font-size: 1.5em;
+                }
+
+                .campaign-sub {
+                    font-size: 1em;
+                }
+
+                .campaign-ticket-btn {
+                    font-size: 1.1em;
+                    padding: 12px 20px;
+                }
+
+                .campaign-period-date {
+                    font-size: 1.3em;
+                }
+            }
+
             .job-section {
                 text-align: center;
                 padding: 10px 10px;
