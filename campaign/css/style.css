@@ -184,7 +184,7 @@
         }
         
         .section h2 {
-            color: #fff;
+            color: #006634;
             font-size: 32px;
             margin-bottom: 20px;
             border-bottom: 3px solid #006634;
@@ -349,7 +349,7 @@
             }
 
             .campaign-header {
-               /* background: linear-gradient(135deg, #fff6e9, #fdeee0); */
+               background: linear-gradient(135deg, #fff6e9, #fdeee0); 
                 text-align: center;
                 padding: 30px 20px;
             }
