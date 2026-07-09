@@ -185,7 +185,7 @@
         
         .section h2 {
             color: #fff;
-            font-size: 1.8em;
+            font-size: 36px;
             margin-bottom: 20px;
             border-bottom: 3px solid #006634;
             padding-bottom: 10px;
@@ -362,8 +362,8 @@
             }
 
             .campaign-sub {
-                color: #33475b;
-                font-size: 1.1em;
+                color: #fff;
+                font-size: 26px!important;
                 line-height: 1.7;
                 margin-bottom: 20px;
             }
