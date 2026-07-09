@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グリーンピア近江八幡ゴルフ練習場</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="滋賀県近江八幡市のゴルフ練習場、グリーンピア近江八幡ゴルフ練習場の公式サイトです。営業時間・料金・アクセス情報をご案内しています。">
+
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SS74ZRFMC"></script>
+    <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0SS74ZRFMC');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #0277bd;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+  </head>
+
+<body>
+ <header class="header">
+  <div class="logo-wrapper">
+    <a href="index.html"><img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img"></a>
+  </div>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+      <img id="menuIcon" src="images/menu-icon.jpg" alt="メニュー" onclick="openMenu()" />
+    </div>
+
+    <!-- サイドメニュー -->
+    <nav id="sideMenu" class="side-menu">
+       <img id="closeIcon" src="images/close-icon.jpg" alt="閉じる" onclick="closeMenu()" />
+        <ul>
+         <li><a href="service.html">料金表</a></li>
+         <li><a href="facilities.html">施設案内</a></li>
+         <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+         <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+         <li><a href="member.html">メンバー制度</a></li>
+         <li><a href="access.html">アクセス</a></li>
+         <li><a href="faq.html">よくあるご質問</a></li>
+         <li><a href="contact.html">お問合せ</a></li>
+       </ul>
+    </nav>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="service.html">料金表</a></li>
+        <li><a href="facilities.html">施設案内</a></li>
+        <li><a href="golf-coach.html">コーチ・プロ紹介</a></li>
+        <li><a href="school-lesson.html">スクール・レッスン日程</a></li>
+        <li><a href="member.html">メンバー制度</a></li>
+        <li><a href="access.html">アクセス</a></li>
+        <li><a href="faq.html">よくあるご質問</a></li>
+        <li class="contact-btn"><a href="contact.html">お問合せ</a></li>
+      </ul>
+     </nav>
+  </header>
+
+    <main>
+        <!-- スライドショー -->
+       <div class="slider">
+            <img src="images/slide1.jpg" class="slide active">
+            <img src="images/slide2.jpg" class="slide">
+            <img src="images/slide3.jpg" class="slide">
+            <img src="images/slide4.jpg" class="slide">
+            <img src="images/slide5.jpg" class="slide">
+            <img src="images/slide6.jpg" class="slide">
+       </div>
+    
+        <div class="container"></div>
+            <!-- 夏限定キャンペーン -->
+            <section class="campaign-section">
+                <div class="campaign-header">
+                    <h2 class="campaign-title">&#10084; 夏限定キャンペーン &#10084;</h2>
+                    <p class="campaign-sub">暑い夏でも爽快にゴルフ練習！<br>冷たいドリンクでひと休み&#9834;</p>
+                    <div class="campaign-ticket-btn">ドリンクチケットプレゼント！</div>
+                    <img src="campaign/images/coke-on-green.jpg" alt="ドリンクチケットでもらえる飲み物" class="campaign-photo">
+                </div>
+                <div class="campaign-period">
+                    <p class="campaign-period-label">キャンペーン期間</p>
+                    <p class="campaign-period-date">2026年7月21日〜8月31日</p>
+                    <p class="campaign-period-time">平日限定　12:00〜16:00</p>
+                </div>
+                <ul class="campaign-notes">
+                    <li>※ 3000円以上のプリカをご購入頂いたお客様対象</li>
+                    <li>※ ドリンクチケットお1人様1枚まで</li>
+                    <li>※ ドリンクはコカ・コーラ自販機の中からお選び下さい</li>
+                    <li>※ 詳しくはフロントまで</li>
+                </ul>
+                <div class="campaign-footer-banner">
+                    <p class="campaign-footer-text">皆様のご来場お待ちしております&#9834;</p>
+                    <p class="campaign-footer-store">グリーンピア近江八幡ゴルフ</p>
+                </div>
+            </section>
+
+            <!-- 営業時間 -->
+            <section class="section narrow">
+                <h2>営業時間のご案内</h2>
+                <table class="hours-table">
+                    <thead>
+                        <tr>
+                            <th>営業</th>
+                            <th>時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>フロント営業</td>
+                            <td>10:00 〜 23:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- レッスン・イベント情報 -->
+            <!--<section class="section events-section"> -->
+            <section class="section narrow">
+                <h2>レッスン開催日とお休みのお知らせ</h2>
+                <!-- 吉井プロの予定はコメントアウト　0524 -->
+                <!-- <div class="event-item">
+                <div class="event-title">吉井プロ</div>
+                    <p>3月のお休み：20日（金）</p>
+                    <p>4月のお休み：10日（金）</p>
+                 </div> -->
+                 <div class="event-item"> 
+                 <div class="event-title">廣田プロ</div>
+                    <p>7月のレッスン日：18日（土）<br>
+                    8月のレッスン日：1日（土）</p>
+                 </div>
+                 <div class="event-item">       
+                  <div class="event-title">信田プロ</div>
+                    <p>7月のお休み：5日（日）・13日（月）・20日（月）</p>
+                 </div>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 20px; color: #fff;">イベントの日程＆内容</h3>
+                <div class="event-item">
+                    <div class="event-title">レディースDAY</div>
+                    <p>スタンプ2倍押し♡</p>
+                    <p>7月8日（水）</p>
+                </div>
+                <div class="event-item">
+                    <div class="event-title">❀7月プレミアム週間❀</div>
+                    <p>7月12日～18日</p>
+                </div>
+                <div class="event-item">
+                    <div class="event-title">❀ワンポイントレッスン❀</div>
+                    <p>PGAトーナメントプロ 中西プロによるワンポイントレッスン開催日！</p>
+                    <p><span class="highlight">10分…1200円</span></p>
+                </div>
+                <div class="event-item">
+                    <div class="event-title">初心者向けの無料レッスン</div>
+                    <p>初心者向けの無料レッスンを実施しております。詳しくはお問い合わせください。</p>
+                </div>
+                <div class="event-item">
+                    <div class="event-title">お支払い方法</div>
+                    <p>d払い・メルカリペイでもお支払いできます♪</p>
+                    <p>ただし、プリペイドカードのみのお支払いになります❀</p>
+                    <p>ＬＩＮＥ@でお友達登録してもらうとお得な情報・クーポンが届きます♪</p>
+                </div>
+            </section>
+            
+            <!-- コーチ・プロ紹介 -->
+            <section class="section">
+                <h2>コーチ・プロ紹介</h2>
+                <div class="coach-grid">
+                    <a href="coach-yoshii.html" class="coach-card">
+                        <img src="images/coach-01.jpg" alt="吉井 泰恵プロ" class="coach-image">
+                        <div class="coach-top">吉井 泰恵プロ</div>
+                    </a>
+                    <a href="coach-hirota.html" class="coach-card">
+                        <img src="images/coach-02.jpg" alt="廣田 恭司プロ" class="coach-image">
+                        <div class="coach-top">廣田 恭司プロ</div>
+                    </a>
+                    <a href="coach-nobuta.html" class="coach-card">
+                        <img src="images/coach-03.jpg" alt="信田 博良プロ" class="coach-image">
+                        <div class="coach-top">信田 博良プロ</div>
+                    </a>
+                    <a href="coach-fujita.html" class="coach-card">
+                        <img src="images/coach-04.jpg" alt="藤田 翼プロ" class="coach-image">
+                        <div class="coach-top">藤田 翼プロ</div>
+                    </a>
+                    <a href="coach-kaneko.html" class="coach-card">
+                        <img src="images/coach-05.jpg" alt="金子 徳馬プロ" class="coach-image">
+                        <div class="coach-top">金子 徳馬プロ</div>
+                    </a>
+                    <a href="coach-nakanishi.html" class="coach-card">
+                        <img src="images/coach-06.jpg" alt="中西 永知プロ" class="coach-image">
+                        <div class="coach-top">中西 永知プロ</div>
+                    </a>
+                 </div>
+                 
+                    <div class="coach-button-wrapper">
+                       <a href="golf-coach.html" class="coach-button">コーチ・プロの詳細へ →</a>
+                    </div>
+                     
+            </section>
+            
+            <!-- SNS情報 -->
+             <section class="sns-section">
+            <h2>SNSで最新情報をお届け中</h2>
+            <div class="sns-grid"> 
+                <div class="sns-box">
+                <p><strong>LINE</strong></p>
+                <img src="images/official_line.jpg" alt="LINE QR" class="sns-img">
+                </div>
+                <div class="sns-box">
+                <p><strong>Instagram</strong></p>
+                <img src="images/instagram.jpg" alt="Instagram QR" class="sns-img">
+                </div>
+                <div class="sns-box">
+                <p><strong>Facebook</strong></p>
+                    <iframe 
+                    src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/greenpiagolf/&tabs=timeline&width=300&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                    width="250" height="250" style="border:none;overflow:hidden" 
+                    scrolling="no" frameborder="0" allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                </div>
+            </div>
+            </section>
+ 
+     <!-- アルバイト募集 -->
+      <section class="job-section">
+    <h2>☆アルバイト募集中☆</h2>
+
+  <div class="job-wrapper">
+     <div class="job-box">
+            <p><strong>現在スタッフを募集しております。</strong></p>
+            <p>ご興味のある方はお気軽にお問い合わせください。</p>
+
+            <img src="images/part-time-job.png" alt="アルバイト募集" class="job-image">
+       </div>
+    </div>
+</section>
+
+    </main>
+    
+   <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/Tittle-LOGO.jpg" alt="ロゴ" class="footer-logo" />
+            <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="service.html">料金表</a>
+            <a href="facilities.html">施設案内</a>
+            <a href="golf-coach.html">コーチ・プロ紹介</a>
+            <a href="school-lesson.html">スクール・レッスン日程</a>
+            <a href="member.html">メンバー制度</a>
+            <a href="access.html">アクセス</a>
+            <a href="faq.html">よくあるご質問</a>
+            </div>
+            <p class="footer-text">© 2026 グリーンピア近江八幡ゴルフ. All Rights Reserved.</p>
+        </div>
+   </footer>
+
+    <script src="script.js"></script>
+
+    <!--menu-->
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.right = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.getElementById('sideMenu').style.right = '-100%';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
