@@ -44,18 +44,29 @@
     overflow:hidden;
   }
   .hero-inner{
+    position:relative;
     max-width:900px;
     margin:0 auto;
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    align-items:stretch;
+    min-height:300px;
+    display:flex;
+    align-items:center;
+  }
+  .hero-bg{
+    position:absolute;
+    right:0;
+    bottom:0;
+    height:82%;
+    max-height:230px;
+    width:auto;
+    object-fit:contain;
+    z-index:1;
   }
   .hero-text{
-    padding:56px 32px 48px 24px;
+    position:relative;
+    z-index:2;
+    max-width:420px;
+    padding:48px 24px;
     color:var(--paper);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
   }
   .eyebrow{
     color:#e7d9b0;
@@ -64,7 +75,7 @@
     margin-bottom:10px;
   }
   .hero-text h1{
-    font-size:2.5rem;
+    font-size:2.3rem;
     font-weight:700;
     line-height:1.35;
     color:#fff;
@@ -80,13 +91,6 @@
     font-size:1.05rem;
     letter-spacing:.04em;
     width:fit-content;
-  }
-  .hero-photo{
-    position:relative;
-    min-height:320px;
-  }
-  .hero-photo img{
-    width:100%;height:100%;object-fit:cover;
   }
 
   /* INTRO */
@@ -278,9 +282,9 @@
   }
 
   @media (max-width:680px){
-    .hero-inner{grid-template-columns:1fr;}
-    .hero-photo{min-height:220px;order:-1;}
-    .hero-text{padding:32px 20px;}
+    .hero-inner{flex-direction:column;align-items:flex-start;min-height:0;padding-bottom:16px;}
+    .hero-bg{position:relative;right:auto;bottom:auto;height:auto;max-height:none;width:56%;margin:0 auto 0 auto;order:-1;align-self:center;}
+    .hero-text{padding:28px 20px 8px;max-width:none;}
     .hero-text h1{font-size:1.7rem;}
     .course-grid{grid-template-columns:1fr;}
     .instructor-card{grid-template-columns:100px 1fr;}
@@ -294,13 +298,11 @@
 
   <section class="hero">
     <div class="hero-inner">
+      <img class="hero-bg" src="images/hero.png" alt="スイングするゴルファー">
       <div class="hero-text">
         <div class="eyebrow">Eichi Golf Academy</div>
         <h1>土曜日スクール<br>生徒募集中！</h1>
         <span class="badge">只今、生徒さん募集しています</span>
-      </div>
-      <div class="hero-photo">
-        <img src="images/hero.jpg" alt="スイングするゴルファー">
       </div>
     </div>
   </section>
