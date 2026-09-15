@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eichi Golf Academy 土曜日スクール</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1f3a2b;
+    --fairway:#3f6b45;
+    --cream:#f6f3ea;
+    --paper:#fffdf8;
+    --gold:#c9973e;
+    --ink:#26261f;
+    --line:#dcd6c4;
+
+    --junior:#3f7a4a;
+    --group:#356f97;
+    --beginner:#c06a2f;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Noto Sans JP", sans-serif;
+    line-height:1.8;
+  }
+  h1,h2,h3{
+    font-family:"Shippori Mincho", serif;
+    margin:0;
+  }
+  img{max-width:100%;display:block;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:var(--forest);
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:900px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    align-items:stretch;
+  }
+  .hero-text{
+    padding:56px 32px 48px 24px;
+    color:var(--paper);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .eyebrow{
+    color:#e7d9b0;
+    font-size:.95rem;
+    letter-spacing:.04em;
+    margin-bottom:10px;
+  }
+  .hero-text h1{
+    font-size:2.5rem;
+    font-weight:700;
+    line-height:1.35;
+    color:#fff;
+  }
+  .badge{
+    display:inline-block;
+    margin-top:22px;
+    background:var(--gold);
+    color:var(--forest);
+    font-weight:700;
+    padding:9px 22px;
+    border-radius:2px;
+    font-size:1.05rem;
+    letter-spacing:.04em;
+    width:fit-content;
+  }
+  .hero-photo{
+    position:relative;
+    min-height:320px;
+  }
+  .hero-photo img{
+    width:100%;height:100%;object-fit:cover;
+  }
+
+  /* INTRO */
+  .intro{
+    padding:44px 0 8px;
+  }
+  .intro p{
+    max-width:60ch;
+    color:#3a392f;
+    font-size:1rem;
+  }
+
+  /* COURSE TABLE */
+  .courses{padding:36px 0 8px;}
+  .courses h2{
+    font-size:1.5rem;
+    color:var(--forest);
+    border-bottom:2px solid var(--forest);
+    padding-bottom:10px;
+    margin-bottom:26px;
+  }
+  .course-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  .course-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .course-name{
+    display:block;
+    font-weight:700;
+    color:#fff;
+    font-size:1rem;
+    padding:11px 16px;
+  }
+  .c-junior .course-name{background:var(--junior);}
+  .c-group .course-name{background:var(--group);}
+  .c-beginner .course-name{background:var(--beginner);}
+
+  .course-thumb{
+    width:100%;
+    aspect-ratio:4/3;
+    background:#e9e4d3;
+    overflow:hidden;
+  }
+  .course-thumb img{width:100%;height:100%;object-fit:cover;}
+
+  .course-body{
+    padding:14px 16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+  .course-meta{
+    font-size:.86rem;
+    color:#3a392f;
+  }
+  .course-meta strong{color:var(--ink);}
+  .course-desc{
+    font-size:.86rem;
+    color:#5b5a4d;
+    flex:1;
+  }
+
+  .info-box{
+    border-radius:4px;
+    padding:9px 12px;
+    font-size:.86rem;
+  }
+  .info-box .info-label{
+    font-weight:700;
+    font-size:.74rem;
+    letter-spacing:.02em;
+    margin-bottom:3px;
+    display:block;
+  }
+  .time-box{background:#eef1e4;color:#33452c;}
+  .price-box{background:#fbeecb;color:#7a5a17;font-weight:700;}
+  .c-group .time-box{background:#e2edf5;color:#264a63;}
+  .c-group .price-box{background:#dceaf6;color:#1f4a6b;}
+  .price-box strong{font-size:1.05rem;}
+
+  /* NOTES */
+  .notes{
+    padding:34px 0;
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    font-size:.9rem;
+    color:#5b5a4d;
+    border-top:1px solid var(--line);
+    margin-top:12px;
+  }
+  .notes span{display:flex;align-items:center;gap:8px;}
+  .notes .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--gold);
+    flex-shrink:0;
+  }
+
+  /* INSTRUCTOR */
+  .instructor{
+    padding:40px 0;
+    border-top:1px solid var(--line);
+  }
+  .instructor h2{
+    font-size:1.5rem;
+    color:var(--forest);
+    margin-bottom:22px;
+  }
+  .instructor-card{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    align-items:start;
+  }
+  .instructor-card img{
+    width:140px;height:140px;
+    object-fit:cover;
+    border-radius:4px;
+  }
+  .instructor-name{
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:4px;
+  }
+  .instructor-title{
+    color:var(--fairway);
+    font-size:.88rem;
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .instructor-card p{
+    font-size:.92rem;
+    color:#3a392f;
+    margin:0;
+    max-width:56ch;
+  }
+
+  /* FOOTER / CONTACT */
+  footer{
+    background:var(--forest);
+    color:var(--paper);
+    margin-top:20px;
+  }
+  .footer-inner{
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 24px 46px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:18px;
+  }
+  .footer-left .label{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--forest);
+    font-weight:700;
+    font-size:.85rem;
+    padding:4px 12px;
+    border-radius:2px;
+    margin-bottom:10px;
+  }
+  .tel{
+    font-size:2rem;
+    font-weight:700;
+    color:#fff;
+    letter-spacing:.02em;
+  }
+  .footer-right{
+    font-size:.88rem;
+    color:#d6d2c2;
+    text-align:right;
+  }
+  .footer-right .venue{
+    color:#fff;
+    font-weight:700;
+    font-size:1rem;
+    margin-bottom:4px;
+  }
+
+  @media (max-width:680px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-photo{min-height:220px;order:-1;}
+    .hero-text{padding:32px 20px;}
+    .hero-text h1{font-size:1.7rem;}
+    .course-grid{grid-template-columns:1fr;}
+    .instructor-card{grid-template-columns:100px 1fr;}
+    .instructor-card img{width:100px;height:100px;}
+    .footer-inner{flex-direction:column;align-items:flex-start;text-align:left;}
+    .footer-right{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="eyebrow">Eichi Golf Academy</div>
+        <h1>土曜日スクール<br>生徒募集中！</h1>
+        <span class="badge">只今、生徒さん募集しています</span>
+      </div>
+      <div class="hero-photo">
+        <img src="images/hero.jpg" alt="スイングするゴルファー">
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <section class="intro">
+      <p>EGAでは生徒さんの希望を確認して、個人にあったスウィング作りを動画やトラックマンで確認しながら進めます。初心者からアスリートまで幅広く、個々のレベルに合った指導を行っていきます。初心者の方、女性、シニアの方、競技ゴルファーの方、皆さまのゴルフライフが明るく楽しく過ごせるように精一杯サポートさせていただきます。</p>
+    </section>
+
+    <section class="courses">
+      <h2>コース案内</h2>
+
+      <div class="course-grid">
+
+        <div class="course-card c-junior">
+          <span class="course-name">ジュニアスクール</span>
+          <div class="course-thumb"><img src="images/junior.jpg" alt="ジュニアスクール"></div>
+          <div class="course-body">
+            <div class="course-meta"><strong>対象</strong>：小学1年生〜高校3年生／<strong>定員</strong>：10名</div>
+            <p class="course-desc">ゴルフの基礎からマナーまで楽しく学べる！</p>
+            <div class="info-box time-box">
+              <span class="info-label">時間</span>10:00〜11:00
+            </div>
+            <div class="info-box price-box">
+              <span class="info-label">料金</span><strong>1,000円</strong> / 人
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card c-group">
+          <span class="course-name">グループレッスン</span>
+          <div class="course-thumb"><img src="images/group.jpg" alt="グループレッスン"></div>
+          <div class="course-body">
+            <div class="course-meta"><strong>定員</strong>：最大3名 / 時間</div>
+            <p class="course-desc">少人数制で丁寧に指導！しっかり上達をサポート！</p>
+            <div class="info-box time-box">
+              <span class="info-label">時間</span>
+              13:00〜13:50<br>14:00〜14:50<br>16:00〜16:50<br>17:00〜17:50
+            </div>
+            <div class="info-box price-box">
+              <span class="info-label">料金</span><strong>3,000円</strong> / 人
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card c-beginner">
+          <span class="course-name">初心者スクール</span>
+          <div class="course-thumb"><img src="images/beginner.jpg" alt="初心者スクール"></div>
+          <div class="course-body">
+            <div class="course-meta"><strong>定員</strong>：3名</div>
+            <p class="course-desc">初めての方でも安心！基礎から丁寧にサポートします！</p>
+            <div class="info-box time-box">
+              <span class="info-label">時間</span>18:00〜18:50
+            </div>
+            <div class="info-box price-box">
+              <span class="info-label">料金</span><strong>0円</strong> / 人 / 4回<br>（KGU規定のみ）
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="notes">
+        <span><span class="dot"></span>別途ボール代がかかります</span>
+        <span><span class="dot"></span>ゴルフクラブ 無料貸出有</span>
+        <span><span class="dot"></span>トラックマン測定無料</span>
+      </div>
+    </section>
+
+    <section class="instructor">
+      <h2>自己紹介</h2>
+      <div class="instructor-card">
+        <img src="images/instructor.jpg" alt="中西永知プロ">
+        <div>
+          <div class="instructor-name">中西 永知</div>
+          <div class="instructor-title">PGAティーチングプロ</div>
+          <p>10歳からゴルフを始め、中学・高校・大学では競技ゴルフを通じて同期の蝶川プロ、平田プロ、中島プロ達と凌ぎを削っておりました。ティーチングプロになった現在も更なる高みを目指し研鑽中です！</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="label">ご予約・お問い合わせ</div>
+        <div class="tel">0748-37-2010</div>
+      </div>
+      <div class="footer-right">
+        <div class="venue">グリーンピア近江八幡ゴルフ</div>
+        <div>電話受付 10:00〜22:00　年中無休</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
