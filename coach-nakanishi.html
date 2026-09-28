@@ -32,9 +32,16 @@
         .back-link { display: inline-block; margin-top: 12px; color: #006634; font-size: 0.9em; text-decoration: none; }
         .back-link:hover { text-decoration: underline; }
         .section { display: block; margin: 0 auto; }
+        .coach-profile > div { min-width: 0; }   /* テキスト側が広がらないように */
+        .coach-profile img { aspect-ratio: 1 / 1; min-width: 80px; }
+        .academy-embed { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .academy-embed h2 { font-size: 1.1em; font-weight: 700; color: #006634; border-bottom: 2px solid #006634; padding-bottom: 10px; margin-bottom: 16px; }
+        .academy-embed iframe { display: block; width: 100%; height: 600px; border: 0; }
+        @media (max-width: 600px) { .academy-embed iframe { height: 500px; } }
         @media (max-width: 600px) { .coach-profile { flex-direction: column; text-align: center; padding: 24px 20px; } .section { padding: 20px 16px; } .lesson-table th, .lesson-table td { padding: 10px; font-size: 0.88em; } }
     </style>
 </head>
+<body>
 <header class="header">
     <div class="logo-wrapper"><a href="index.html"><img src="images/Tittle-LOGO.jpg" alt="グリーンピア近江八幡ゴルフ練習場" class="logo-img"></a></div>
     <div class="hamburger-menu"><img id="menuIcon" src="images/menu-icon.jpg" alt="メニュー" onclick="openMenu()" /></div>
@@ -57,24 +64,23 @@
         </ul>
     </nav>
 </header>
-<body>
     <div class="page-wrapper">
         <div class="breadcrumb"><a href="index.html">ホーム</a><span>›</span><a href="golf-coach.html">コーチ・プロ紹介</a><span>›</span>中西 永知プロ</div>
         <div class="coach-profile">
             <img src="images/coach-06.jpg" alt="中西 永知プロ">
-            <div><h1>中西 永知プロ</h1><div class="coach-qualification">日本プロゴルフ協会（PGA）ティーチングプロ</div>
-            <div><h2><a href="../eichi-golf-academy">Eichi Golf Academy</a></h2>土曜日スクール生徒募集中！</div>
-            <iframe class="section"
-              src="https://greenpia-golf.com/eichi-golf-academy"
-              title="土曜日スクールのページ"
-              width="1000"
-              height="600"
-              style="border:0;"
-              loading="lazy"
-　　           style="display: block; margin: 0 auto;"
-              allowfullscreen>
-            </iframe>
+            <div>
+                <h1>中西 永知プロ</h1>
+                <div class="coach-qualification">日本プロゴルフ協会（PGA）ティーチングプロ</div>
             </div>
+        </div>
+        
+        <div class="academy-embed">
+            <h2><a href="https://greenpia-golf.com/eichi-golf-academy">Eichi Golf Academy</a>　土曜日スクール生徒募集中！</h2>
+            <iframe
+                src="https://greenpia-golf.com/eichi-golf-academy"
+                title="土曜日スクールのページ"
+                loading="lazy"
+                allowfullscreen></iframe>
         </div>
         <!-- 変更 -->
 
